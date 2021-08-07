@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card css</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<style>
+    .movie{
+        min-width: 250px;
+        max-width: 300px;
+        margin: 30px;
+    }
+    .img-box{
+        position: relative;
+        overflow: hidden; 
+        box-shadow: 5px 5px 20px rgba(85, 85, 85, 0.671);
+        transition: .5s;
+    }
+    
+    .img-box img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .img-cover{
+        background-color: rgba(0, 0, 0, 0.61);
+        color: white;
+        font-weight: bold;
+        padding: 20px 20px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: .5s;
+        transform: translate(200px);
+
+    }
+
+    .text2{
+        transform: translate(200px);
+        opacity: 0;
+        transition: .5s;
+        font-size: 15px;
+    }
+    .movie:hover .img-cover{
+        opacity: 1;
+        transform: translate(0px);
+    }
+
+    .movie:hover .text2 {
+        opacity: 1;
+        transform: translate(0px);
+    }
+
+    .movie:hover .title2{
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+    .title2{
+        transform: translate(0px, 20px);
+        opacity: 0;
+        transition: .5s;
+        font-size: 18px;
+    }
+    .name{
+        margin-top: 20px;
+        font-size: 25px;
+        font-weight: bold;
+        transition: .3s;
+    }
+    .movie:hover .img-box{
+        transform: scale(1.15,1.15);
+    }
+
+    .movie:hover .name{
+        transform: translate(0px, -20px);
+        opacity: 0;
+    }
+    .warp{
+        width: 80%;
+        margin: 100px auto;
+        justify-content: center;
+        text-align: center;
+    }
+    .row{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+</style>
+
+<body>
+    <div class="warp">
+        <div class="row">
+            <div class="movie">
+                <div class="img-box">
+                    <img src="./img/card/movie-coco.jpeg" alt="">
+                    <div class="img-cover">
+                        <p class="title2">可可夜總會</p>
+                        <p class="text2">片長 : 100 分鐘</p>
+                        <p class="text2">故事是描述一位對吉他執著且懷抱夢想的小男孩，由於他的祖母被吉他手拋棄，家族因此唾棄音樂且從事製鞋業。有一天，他誤闖進死人的世界，這次的「死亡遭遇」顛覆了他的世界，重溫家族與音樂。</p>
+                    </div>
+                </div>
+                <p class="name">可可夜總會</p>
+            </div>
+            <div class="movie">
+                <div class="img-box">
+                    <img src="./img/card/movie-frozen.jpeg" alt="">
+                    <div class="img-cover">
+                        <p class="title2">冰雪奇緣</p>
+                        <p class="text2">片長 : 100 分鐘</p>
+                        <p class="text2">北歐艾倫戴爾王國的公主艾莎和安娜尚在年幼時，一日晚上國王安格納向她們講述睡前故事：王國北方魔法森林有魔靈的存在，住在森林的北烏卓人跟魔靈們和諧共處。</p>
+                    </div>
+                </div>
+                <p class="name">冰雪奇緣</p>
+            </div>
+            <div class="movie">
+                <div class="img-box">
+                    <img src="./img/card/movie-dory.jpeg" alt="">
+                    <div class="img-cover">
+                        <p class="title2">海底總動員:多莉去哪兒?</p>
+                        <p class="text2">片長 : 103 分鐘</p>
+                        <p class="text2">《海底總動員》十年後又回來了！這次故事將生性樂天但有短暫性健忘症的藍魚多莉身上，發生在尼莫返家後的六個月，多莉決定要去尋找自己的家人，於是展開一段遠赴加州海岸的全新冒險之旅。</p>
+                    </div>
+                </div>
+                <p class="name">海底總動員:多莉去哪兒?</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</html>
+</body>
