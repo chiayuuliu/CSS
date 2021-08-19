@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>city card css</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family:'Times New Roman', Times, serif;
+    }
+    body{
+        background-color: black;
+    }
+
+    .wrap{
+        width: 100%;
+        margin: auto;
+
+    }
+    .item{
+        float: left;
+        position: relative;
+        object-fit: cover;
+    }
+    .item img{
+        width: 100%;
+        vertical-align: middle;
+    }
+    .item:first-child{
+        width: 50%;
+    }
+    .item:first-child ~ .item{
+        width: 25%;
+    }
+    .item .txt{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.342);
+        display: flex;
+        opacity: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+        transform: scale(0.5);
+
+    }
+    .item:hover .txt{
+        /* 用display:flex沒辦法設定淡出淡入 */
+        /* display: flex; */
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    p{
+        font-size: 12px;
+        line-height: 1.5;
+        font-weight: 100;
+    }
+    h3{
+        padding-bottom: 0.4em;
+    }
+</style>
+<body>
+
+    <div class="wrap">
+        <div class="item">
+            <img src="./img/card/東京.jpg" alt="">
+            <div class="txt">
+                <h3>東京</h3>
+                <p>去趟東京行，絕對少不了品嚐國民美食拉麵，各式湯頭、麵條種類、配料到秘傳配方，在這激戰中難分軒輊，各有各的擁護者；提到東京美食，不得不提及壽司，其中又以「江戶前壽司」而聞名，料理人精湛的技藝，將每一貫握壽司注入職人魂，嚐過一次便令人魂牽夢縈。</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./img/card/新加坡.jpg" alt="">
+            <div class="txt">
+                <h3>新加坡</h3>
+                <p>新加坡是一個多元種族文化的移民社會，受馬來西亞、中華、印度、阿拉伯等文化影響，在建築方面亦有豐富多彩的文化表現。 </p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./img/card/曼谷.jpg" alt="">
+            <div class="txt">
+                <h3>曼谷</h3>
+                <p>泰國一年一度的水燈節，素有「泰國最美節慶」之稱，除了河畔邊的水燈外，放天燈也是其中一大環節，水面與天上的大片閃爍燈火，營造出浪漫的氛圍。</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./img/card/胡志明市.jpg" alt="">
+            <div class="txt">
+                <h3>胡志明市</h3>
+                <p>越南斗笠以竹子做為骨架，再以棕櫚葉與竹葉編製而成。在緯度低且多雨的越南，著用斗笠的人很多，女性更會與輕柔飄逸的奧黛相互搭配。</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./img/card/馬尼拉.jpg" alt="">
+            <div class="txt">
+                <h3>馬尼拉</h3>
+                <p>換個場景從馬拉提區登高一覽夜幕低垂的晚霞，欣賞夕陽緩緩沉入海裡，盡情享受濱海城市 - 馬尼拉的清新浪漫的美麗景緻！</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
