@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>側邊欄位練習</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+    html, body{
+        height: 100%;
+    }
+    body{
+        background-color: #546377;
+    }
+    .side-menu{
+        width: 300px;
+        height: 100%;
+        /* 由下往上漸層 */
+        background-image: linear-gradient(0deg, #29526b,#c2196c);
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        transition: .5s;
+        box-shadow: 5px 0px 15px hsla(240, 40%, 20%, .6);
+    }
+    
+    .side-menu form{
+        /* 消除跟input之間的間距 */
+        display: flex;
+        margin: 40px auto;
+        border-radius: 100px;
+        border:1.5px solid rgba(255, 255, 255, 0.6);
+        
+    }
+    .side-menu form input,
+    .side-menu form button{
+        border: none;
+        padding: 5px 10px;
+        background-color: transparent;
+        color: white;
+    }
+
+    /* 取消focus時的外框 */
+    .side-menu form input:focus,
+    .side-menu form button:focus{
+        outline: none;
+    }
+
+    .side-menu form input{
+        width: 230px;
+        padding-right: 5px;
+    }
+    .side-menu form button{
+        width: 40px;
+        cursor: pointer;
+    }
+
+
+    nav a{
+        display: block;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        margin: 3px 15px;
+        font-size: 1em;
+        transition: .5s;
+    }
+    ::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1em;
+    }
+    /* 研究用法 */
+    nav a +a {
+        border-top: 1px solid rgba(255, 255, 255, 0.6);
+    }
+    i{
+        margin-right: 10px;
+        text-decoration: none;
+    }
+    nav i{
+        /* margin-right: -1.1em;
+        transform: scale(0); */
+        transition: .5s;
+    }
+    nav a:hover i{
+        margin-right: 10px;
+        transform: scale(1);
+        text-decoration: none;
+        color: white;
+    }
+    nav a:hover {
+        text-decoration: none;
+        color: white;
+        /* transform: translateX(5px); */
+        transform: scale(1.05);
+    }
+</style>
+<body>
+    <div class="side-menu">
+        <form action="">
+            <input type="search" placeholder="請輸入關鍵字" >
+            <button><i class="fas fa-search"></i></button>
+        </form>
+        <nav>
+            <a href=""><i class="fas fa-cart-plus"></i>好食商城</a>
+            <a href=""><i class="far fa-newspaper"></i>好食專欄</a>
+            <a href=""><i class="fas fa-utensils"></i>好食餐盒</a>
+            <a href=""><i class="fas fa-user"></i>會員中心</a>
+            <a href=""><i class="far fa-handshake"></i>與我們合作</a>
+        </nav>
+    </div>
+</body>
+</html>
