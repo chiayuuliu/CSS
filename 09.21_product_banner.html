@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>banner 練習</title>
+    
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        box-sizing: border-box;
+    }
+    .banner{
+        width: 100%;
+        height: 500px;
+    }
+    .banner1{
+        /* 多重背景 */
+        background: 
+        /* 第一組背景 */
+        /* 位置在中間,寬高都100% */
+            linear-gradient(90deg, rgb(255, 255, 255) 53%, transparent 10%) center center / 100% 100%,
+            url(./img/專題/快速上桌-banner.jpeg) 100% center / auto 100%;
+            /* 第二組背景(圖源/圖片位置/ 寬度自動/ 高度100%) */
+    }
+    .banner2{
+        background: 
+            linear-gradient(110deg, rgb(255, 255, 255) 50%, transparent 10%) center center / 100% 100%,
+            url(./img/專題/嚴選食材-banner.jpeg) 100% center / 80% auto;
+    }
+
+    .container{
+        height: 100%;
+        max-width: 1200px;
+        width: 100%;
+        margin: auto;
+    }
+    .banner-text{
+        height: 100%;
+        display: flex;
+        /* 主軸變直的,次軸變衡的, 預設會stretch全寬, 改為flex-start, 讓h1的底線只有文字寬 */
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .banner-text h1{
+        color: #8FC065;
+        font-size: 60px;
+        border-bottom: 1px solid #8FC065;
+    }
+    
+    .banner-text h2{
+        font-size: 44px;
+        color: #FB6107;
+    }
+    .space{
+        color: transparent;
+    }
+    .title{
+        color: #8FC065;
+    }
+</style>
+<body>
+    <div class="banner banner1">
+        <div class="container">
+            <div class="banner-text">
+                <h1>快速上桌</h1>
+                <h2>Simple way of </h2>
+                <h2><span class="space" >1234</span><span class="title">Eating delicious</span></h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner banner2">
+        <div class="container">
+            <div class="banner-text">
+                <h1>嚴選食材</h1>
+                <h2>Simple way of </h2>
+                <h2><span class="space" >1234</span><span class="title">Eating delicious</span></h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
