@@ -57,6 +57,7 @@
     
     .pd-cate{
         flex-direction: column;
+        margin-top: 50px;
     }
     .pd-cate button{
         /* height: 54px;
@@ -116,6 +117,93 @@
     .pd-radio-wrap label{
         margin-left: 15px;
     }
+    .pd-card{
+        width: 220px;
+        height: 230px;
+        background-color: #ffb91759;
+        border-radius: 15px;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 0px 50px 20px;
+    }
+    .pd-img{
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        /* background-color: lightgreen; */
+        overflow: hidden;
+        top: -50px;
+        position: absolute;
+    }
+    .pd-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .pd-card-intro{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 70px;
+    }
+    .pd-name,.pd-price{
+        font-size: 20px;
+        font-family: 'Poppins';
+    }
+    .pd-price{
+        margin: 8px 0px;
+    }
+    .pd-cal{
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+    .pd-btn-wrap{
+        align-items: center;
+        margin: auto;
+        justify-content: center;
+    }
+    .pd-order-btn{
+        border: none;
+        font-family: 'Poppins';
+        font-size: 16px;
+        padding: 5px 30px;
+        border-radius: 100px;
+        background-color: #8FC065;
+        color: white;
+        margin-right: 8px;
+    }
+    .pd-love-icon{
+        font-size: 24px;
+        color: #FB6107;
+    }
+    .pd-card-wrap{
+        /* margin: auto; */
+        margin-left: 100px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+    }
+    /* 頁數 */
+    .page-btn-wrap{
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        color: #2A593E;
+        margin-bottom: 20px;
+    }
+    .page-pre,.page,.page-next,.total-page{
+        font-size: 16px;
+        margin: 0px 10px;        
+    }
+    .page{
+        font-size: 20px;
+        margin: 0 20px;
+    }
+    .page-btn-wrap i{
+        cursor: pointer;
+    }
     /* 背景圖 */
     .pd-bg-img{
         position: absolute;
@@ -128,4 +216,7 @@
         width: 100%;
         /* height: 100%; */
         opacity: .4;
+    }
+    .pd-filter-btn-wrap{
+        margin: 0px auto;
     }
