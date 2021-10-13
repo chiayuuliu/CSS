@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./product.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        height: 100vh;
+    }
+    .game-title{
+        width: 50%;
+        height: 80px;
+        background-color: #FFB606;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .game-title h1{
+        line-height: 80px;
+        font-size: 44px;
+        font-weight: bold;
+        color: white;
+        letter-spacing: 3px;
+    }
+    .rotate{
+        height: 70vh;
+        margin: auto;
+        width: 80%;
+        text-align: center;
+    }
+    .rotate-img{
+        height: 100%;;
+        object-fit: cover;
+        margin: auto;
+        cursor: pointer;
+    }
+    .game-again{
+        font-size: 24px;
+        padding: 10px 80px;
+        border-radius: 100px;
+        text-align: center;
+        background-color: #FB6107;
+        letter-spacing: 3px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;    
+    }
+    .game-leave{
+        color: #8FC065;
+        font-size: 24px;
+        padding: 10px 80px;
+        letter-spacing: 3px;
+        font-weight: bold;
+        /* border-radius: 100px; */
+        cursor: pointer;
+    }
+    .game-btn-wrap{
+        justify-content: space-between;
+        width:80%;
+        margin: auto;
+    }
+</style>
+<body>
+    <div class="game-title">
+        <h1>良辰即食 精選食譜</h1>
+    </div>
+    <div class="rotate">
+        <img class="rotate-img" src="./../img/專題/輪盤-2.png" alt="">
+        <div class="game-fork"><img class="rotate-fork" src="./../img/專題/fork.png" alt=""></div>
+
+    </div>
+    <div class="game-btn-wrap d-flex">
+        <div class="game-leave">離開轉盤</div>
+        <div class="game-again">再轉一次</div>
+    </div>
+    
+</body>
+</html>
