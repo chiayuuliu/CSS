@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./product.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品細節頁</title>
+</head>
+<style>
+    .fs24{
+        font-size: 24px;
+    }
+    .fs16{
+        font-size: 16px;
+    }
+    .fs44{
+        font-size: 44px;
+    }
+    .mb20{
+        margin-bottom: 20px;
+    }
+
+    .dt-bg{
+        margin-top: 60px;
+        width: 600px;
+        height: 600px;
+        background-color: rgba(143, 192, 101, 0.6);
+        border-radius: 50%;
+        position:relative;
+        left: -300px;
+        /* top:-250px */
+        top: -300px;
+    }
+    .dt-bgimg{
+        width: 400px;
+        height: 400px;
+        left: 60%;
+        top: 300px;
+        position: absolute;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .dt-bgimg img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .dt-intro-wrap{
+        width: 45%;
+        margin-top: 60px;
+    }
+    .dt-intro-wrap .fs16{
+        margin-bottom: 0.3rem;
+    }
+    .dt-price{
+        text-align: center;
+        /* padding-left: 30%; */
+        height: 100%;
+        line-height: 100%;
+        padding: 100px 0 0 0;
+    }
+    .content-wrap{
+        width: 55%;
+    }
+    .dt-content-wrap{
+        margin-bottom: 20px;
+    }
+    
+    /* 按鈕區 */
+    .dt-qty-wrap{
+        align-items: center;
+    }
+    .dt-minus, .dt-add{
+        width: 40px;
+        height: 40px;
+        background-color: #8FC065;
+        border-radius: 50px;
+        text-align: center;
+        padding: 8px;
+        font-size: 24px;
+        line-height: 24px;
+        color: white;
+        font-weight: 100;
+    }
+    .dt-qty{
+        font-size: 24px;
+        margin: 0px 20px ;
+    }
+    .dt-addtocart{
+        background-color: #8FC065;
+        text-align: center;
+        border-radius: 100px;
+        font-size: 24px;
+        margin: auto;
+        color: white;
+        letter-spacing: 3px;
+        padding: 20px 80px;
+        font-family: 'Yeseva One';
+        margin-left: 40px;
+    }
+    .dt-sub-title{
+        width: 100%;
+        border-bottom: 2px solid #2a593e;
+        margin: 0px auto 80px;
+        position: relative;
+        font-family: 'Yeseva One';
+    }
+    .dt-sub-title h4{
+        font-size: 32px;
+        color: #2a593e;
+        background-color: white;
+        position: absolute;
+        padding: 0 20px;
+        top: -20px;
+        letter-spacing: 0.1em;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .dt-product-img,.dt-product-context{
+        width: 45%;
+        margin: 0 auto 80px;
+    }
+    .dt-product-img img{
+        width: 100%;
+        object-fit: contain;
+        border-radius: 15px;
+        box-shadow: 4px 0px 40px 0px lightgray;
+    }
+    /* 評論區 */
+    .dt-review{
+        width: 100%;
+        justify-content: space-around;
+        flex-direction:row;
+    }
+    .dt-reviews-wrap{
+        width: 25%;
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: space-between; */
+    }
+    .dt-comments-wrap{
+        width: 100%;
+        height: 200px;
+        background-color:#ffb40533;
+        border-radius: 15px;
+        padding: 10px 20px 0px;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .dt-comments-wrap p{
+        font-size: 16px;
+        color: #2a593e;
+    }
+    .dt-member-img{
+        width: 100px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+    .dt-member-img img{
+        width: 100%;
+        object-fit: cover;
+    }
+    .dt-member-name{
+        font-family: 'Yeseva One';
+        font-size: 20px;
+        color: #2a593e;
+    }
+    .dt-cmts-btm{
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 13px 0 13px;
+        border-color: #ffb40533 transparent transparent transparent;
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="dt-bg">
+                <div class="dt-bgimg">
+                    <img src="./../img/專題/product.png" alt="">
+                </div>
+            </div>
+            <div class="dt-intro-wrap">
+                <div class="dt-name fs44 mb20">雞胸肉沙拉</div>
+                <p class="dt-intro fs24 mb20">含有優質蛋白質卻有極低脂肪的雞胸肉是健身族群最經典的選擇。</p>
+                <div class="dt-content-wrap d-flex">
+                    <div class="content-wrap">
+                        <p class="fs16">熱量:645大卡</p>
+                        <p class="fs16">蛋白質:65克</p>
+                        <p class="fs16">脂肪:65克</p>
+                        <p class="fs16">碳水:100克</p>
+                        <p class="fs16">口味:原味</p>
+                    </div>
+                    <h1 class="dt-price">NT$70</h1>
+                </div>
+                <div class="dt-btn-wrap d-flex">
+                    <div class="dt-qty-wrap d-flex">
+                        <div class="dt-minus"><i class="fas fa-minus"></i></div>
+                        <div class="dt-qty">1</div>
+                        <div class="dt-add"><i class="fas fa-plus"></i></div>
+                        <div class="dt-addtocart">Add To Cart</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="dt-sub-title"><h4>Detail</h4></div>
+            <div class="dt-product-wrap d-flex">
+                <div class="dt-product-img">
+                    <img src="./../img/專題/product-detail.jpg" alt="">
+                </div>
+                <div class="dt-product-context fs24">
+                    <ul>香蒜雞胸肉保留了水分，口感柔潤，並且為水煮雞胸肉加了香蒜來提味。
+                        <li>烹調過程：</li>
+                        <li>1.將雞胸肉以及調味料一起放入真空包裝機並且密封。</li>
+                        <li>2.閹漬三小時以上。</li>
+                        <li>3.將真空包裝好以及調味好的雞胸肉放入熱水中以低溫70度烹調。</li>
+                    </ul>
+                    <br>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="dt-sub-title"><h4>Reviews</h4></div>
+            <div class="dt-review d-flex">
+                <div class="dt-reviews-wrap d-flex">
+                    <div class="dt-comments-wrap d-flex">
+                        <div class="dt-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="dt-member-cmts">好吃</p>
+                        <p class="dt-cmts-date">2021/10/16</p>
+                    </div>
+                    <div class="dt-cmts-btm"></div>
+                    <div class="dt-member-img">
+                        <img src="./../img/專題/person1.jpg" alt="">
+                    </div>
+                    <p class="dt-member-name">Peter</p>
+                
+                </div>
+                <div class="dt-reviews-wrap d-flex">
+                    <div class="dt-comments-wrap d-flex">
+                        <div class="dt-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="dt-member-cmts">好吃</p>
+                        <p class="dt-cmts-date">2021/10/16</p>
+                    </div>
+                    <div class="dt-cmts-btm"></div>
+                    <div class="dt-member-img">
+                        <img src="./../img/專題/person1.jpg" alt="">
+                    </div>
+                    <p class="dt-member-name">Peter</p>                
+                </div>
+                <div class="dt-reviews-wrap d-flex">
+                    <div class="dt-comments-wrap d-flex">
+                        <div class="dt-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="dt-member-cmts">好吃</p>
+                        <p class="dt-cmts-date">2021/10/16</p>
+                    </div>
+                    <div class="dt-cmts-btm"></div>
+                    <div class="dt-member-img">
+                        <img src="./../img/專題/person1.jpg" alt="">
+                    </div>
+                    <p class="dt-member-name">Peter</p>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
