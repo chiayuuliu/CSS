@@ -11,204 +11,94 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Yeseva+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./product-detail.css">
     <title>商品細節頁</title>
 </head>
 <style>
-    .fs24{
-        font-size: 24px;
-    }
-    .fs16{
-        font-size: 16px;
-    }
-    .fs44{
-        font-size: 44px;
-    }
-    .mb20{
-        margin-bottom: 20px;
-    }
-
-    .dt-bg{
-        margin-top: 60px;
-        width: 600px;
-        height: 600px;
-        background-color: rgba(143, 192, 101, 0.6);
-        border-radius: 50%;
-        position:relative;
-        left: -300px;
-        /* top:-250px */
-        top: -300px;
-    }
-    .dt-bgimg{
-        width: 400px;
-        height: 400px;
-        left: 60%;
-        top: 300px;
-        position: absolute;
-        border-radius: 50%;
-        overflow: hidden;
-    }
-    .dt-bgimg img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    .dt-intro-wrap{
-        width: 45%;
-        margin-top: 60px;
-    }
-    .dt-intro-wrap .fs16{
-        margin-bottom: 0.3rem;
-    }
-    .dt-price{
-        text-align: center;
-        /* padding-left: 30%; */
-        height: 100%;
-        line-height: 100%;
-        padding: 100px 0 0 0;
-    }
-    .content-wrap{
-        width: 55%;
-    }
-    .dt-content-wrap{
-        margin-bottom: 20px;
-    }
-    
-    /* 按鈕區 */
-    .dt-qty-wrap{
-        align-items: center;
-    }
-    .dt-minus, .dt-add{
-        width: 40px;
-        height: 40px;
-        background-color: #8FC065;
-        border-radius: 50px;
-        text-align: center;
-        padding: 8px;
-        font-size: 24px;
-        line-height: 24px;
-        color: white;
-        font-weight: 100;
-    }
-    .dt-qty{
-        font-size: 24px;
-        margin: 0px 20px ;
-    }
-    .dt-addtocart{
-        background-color: #8FC065;
-        text-align: center;
-        border-radius: 100px;
-        font-size: 24px;
-        margin: auto;
-        color: white;
-        letter-spacing: 3px;
-        padding: 20px 80px;
-        font-family: 'Yeseva One';
-        margin-left: 40px;
-    }
-    .dt-sub-title{
-        width: 100%;
-        border-bottom: 2px solid #2a593e;
-        margin: 0px auto 80px;
-        position: relative;
-        font-family: 'Yeseva One';
-    }
-    .dt-sub-title h4{
-        font-size: 32px;
-        color: #2a593e;
-        background-color: white;
-        position: absolute;
-        padding: 0 20px;
-        top: -20px;
-        letter-spacing: 0.1em;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    .dt-product-img,.dt-product-context{
-        width: 45%;
-        margin: 0 auto 80px;
-    }
-    .dt-product-img img{
-        width: 100%;
-        object-fit: contain;
-        border-radius: 15px;
-        box-shadow: 4px 0px 40px 0px lightgray;
-    }
-    /* 評論區 */
-    .dt-review{
-        width: 100%;
-        justify-content: space-around;
-        flex-direction:row;
-    }
-    .dt-reviews-wrap{
-        width: 25%;
-        flex-direction: column;
-        align-items: center;
-        /* justify-content: space-between; */
-    }
-    .dt-comments-wrap{
-        width: 100%;
-        height: 200px;
-        background-color:#ffb40533;
-        border-radius: 15px;
-        padding: 10px 20px 0px;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .dt-comments-wrap p{
-        font-size: 16px;
-        color: #2a593e;
-    }
-    .dt-member-img{
-        width: 100px;
-        overflow: hidden;
-        border-radius: 50%;
-    }
-    .dt-member-img img{
-        width: 100%;
-        object-fit: cover;
-    }
-    .dt-member-name{
-        font-family: 'Yeseva One';
-        font-size: 20px;
-        color: #2a593e;
-    }
-    .dt-cmts-btm{
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 10px 13px 0 13px;
-        border-color: #ffb40533 transparent transparent transparent;
-        margin-bottom: 10px;
+    @media (max-width:992px) {
+        .dt-product{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .dt-bg{
+            display: none;
+        }
+        .dt-product-imgwrap{
+            width: 100%;
+        }
+        .dt-bgimg{
+            width: 200px;
+            height: 200px;
+            position: relative;
+            box-shadow: 4px 0px 40px lightgray;
+        }
+        .dt-bgimg{
+            top: 30px;
+            margin: 15px auto;
+        }
+        .dt-intro-wrap{
+            width: 90%;
+            margin-top: 30px;
+            color: #2a593e;
+            text-align: center;
+        }
+        .dt-name, .dt-price{
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .dt-intro{
+            font-size: 16px;
+        }    
+        .dt-content-wrap{
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        .content-wrap p{
+            font-size: 16px;
+            margin-bottom: 0.2rem;
+        }
+        .dt-btn-wrap{
+            flex-direction: column;
+        }
+        .dt-addtocart{
+            padding: 15px 65px;
+        }
+        .dt-qty-wrap{
+            margin-bottom: 20px;
+        }
     }
 </style>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="dt-bg">
+    <div class="dt-bg"></div>
+    <div class="container mb80">
+        <div class="row d-flex dt-product">
+            <div class="dt-product-imgwrap col-lg-6">
                 <div class="dt-bgimg">
                     <img src="./../img/專題/product.png" alt="">
                 </div>
             </div>
-            <div class="dt-intro-wrap">
+            
+            <div class="dt-intro-wrap col-sm-12 col-lg-6">
                 <div class="dt-name fs44 mb20">雞胸肉沙拉</div>
                 <p class="dt-intro fs24 mb20">含有優質蛋白質卻有極低脂肪的雞胸肉是健身族群最經典的選擇。</p>
                 <div class="dt-content-wrap d-flex">
                     <div class="content-wrap">
-                        <p class="fs16">熱量:645大卡</p>
-                        <p class="fs16">蛋白質:65克</p>
-                        <p class="fs16">脂肪:65克</p>
-                        <p class="fs16">碳水:100克</p>
-                        <p class="fs16">口味:原味</p>
+                        <p class="fs24">熱量:645大卡</p>
+                        <p class="fs24">蛋白質:65克</p>
+                        <p class="fs24">脂肪:65克</p>
+                        <p class="fs24">碳水:100克</p>
                     </div>
                     <h1 class="dt-price">NT$70</h1>
                 </div>
                 <div class="dt-btn-wrap d-flex">
-                    <div class="dt-qty-wrap d-flex">
-                        <div class="dt-minus"><i class="fas fa-minus"></i></div>
+                    <div class="dt-qty-wrap d-flex ">
+                        <button class="dt-minus"><i class="fas fa-minus"></i></button>
                         <div class="dt-qty">1</div>
-                        <div class="dt-add"><i class="fas fa-plus"></i></div>
-                        <div class="dt-addtocart">Add To Cart</div>
+                        <button class="dt-add"><i class="fas fa-plus"></i></button>
                     </div>
+                    <button class="dt-addtocart ">Add To Cart</button>
                 </div>
             </div>
         </div>
@@ -217,11 +107,11 @@
         <div class="row">
             <div class="dt-sub-title"><h4>Detail</h4></div>
             <div class="dt-product-wrap d-flex">
-                <div class="dt-product-img">
-                    <img src="./../img/專題/product-detail.jpg" alt="">
+                <div class="dt-product-img col-md-12 col-lg-6">
+                    <img src="./../img/專題/product-detail.png" alt="">
                 </div>
-                <div class="dt-product-context fs24">
-                    <ul>香蒜雞胸肉保留了水分，口感柔潤，並且為水煮雞胸肉加了香蒜來提味。
+                <div class="dt-product-context col-sm-12 col-lg-6 fs24">
+                    <ul><p>香蒜雞胸肉保留了水分，口感柔潤，並且為水煮雞胸肉加了香蒜來提味。</p>
                         <li>烹調過程：</li>
                         <li>1.將雞胸肉以及調味料一起放入真空包裝機並且密封。</li>
                         <li>2.閹漬三小時以上。</li>
@@ -231,11 +121,11 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container mb80">
         <div class="row">
             <div class="dt-sub-title"><h4>Reviews</h4></div>
-            <div class="dt-review d-flex">
-                <div class="dt-reviews-wrap d-flex">
+            <div class="dt-review d-flex mb80">
+                <div class="dt-reviews-wrap d-flex col-sm-12 col-lg-3 ">
                     <div class="dt-comments-wrap d-flex">
                         <div class="dt-rating">
                             <i class="fas fa-star"></i>
@@ -251,9 +141,8 @@
                         <img src="./../img/專題/person1.jpg" alt="">
                     </div>
                     <p class="dt-member-name">Peter</p>
-                
                 </div>
-                <div class="dt-reviews-wrap d-flex">
+                <div class="dt-reviews-wrap d-flex col-sm-12 col-lg-3 ">
                     <div class="dt-comments-wrap d-flex">
                         <div class="dt-rating">
                             <i class="fas fa-star"></i>
@@ -270,7 +159,7 @@
                     </div>
                     <p class="dt-member-name">Peter</p>                
                 </div>
-                <div class="dt-reviews-wrap d-flex">
+                <div class="dt-reviews-wrap d-flex col-sm-12 col-lg-3 ">
                     <div class="dt-comments-wrap d-flex">
                         <div class="dt-rating">
                             <i class="fas fa-star"></i>
@@ -286,7 +175,6 @@
                         <img src="./../img/專題/person1.jpg" alt="">
                     </div>
                     <p class="dt-member-name">Peter</p>
-                
                 </div>
             </div>
         </div>
