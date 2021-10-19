@@ -46,9 +46,7 @@
     margin-top: 60px;
     color: #2a593e;
 }
-.dt-intro-wrap .fs16{
-    /* margin-bottom: 10px; */
-}
+
 .dt-price{
     padding: auto;
     font-size: 44px;
@@ -189,4 +187,59 @@
 .dt-rating i{
     color: #2a593e;
     margin-top: 10px;
+}
+/*手機版 */
+@media (max-width:992px) {
+    .dt-product{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .dt-bg{
+        display: none;
+    }
+    .dt-product-imgwrap{
+        width: 100%;
+    }
+    .dt-bgimg{
+        width: 200px;
+        height: 200px;
+        position: relative;
+        box-shadow: 4px 0px 40px lightgray;
+    }
+    .dt-bgimg{
+        top: 30px;
+        margin: 15px auto;
+    }
+    .dt-intro-wrap{
+        width: 90%;
+        margin-top: 30px;
+        color: #2a593e;
+        text-align: center;
+    }
+    .dt-name, .dt-price{
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+    .dt-intro{
+        font-size: 16px;
+    }    
+    .dt-content-wrap{
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    .content-wrap p{
+        font-size: 16px;
+        margin-bottom: 0.2rem;
+    }
+    .dt-btn-wrap{
+        flex-direction: column;
+    }
+    .dt-addtocart{
+        padding: 15px 65px;
+    }
+    .dt-qty-wrap{
+        margin-bottom: 20px;
+    }
 }
