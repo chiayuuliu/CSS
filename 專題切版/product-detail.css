@@ -28,6 +28,15 @@
 }
 .dt-product-imgwrap{
     width: 45%;
+    display: flex;
+}
+.dtmb-love-icon{
+    font-size: 24px;
+    color: #FB6107;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    display: none;
 }
 .dt-bgimg{
     width: 80%;
@@ -232,7 +241,19 @@
         font-weight: bold;
         margin-top: 15px;
     }
-    
+    .dt-name{
+        justify-content: center;
+        /* margin-right: 10px; */
+
+    }
+    .dt-love-icon{
+        font-size: 20px;
+        margin-right: 0px;
+        display: none;
+    }
+    .dtmb-love-icon{
+        display: block;
+    }
     .dt-intro{
         font-size: 16px;
     }    
