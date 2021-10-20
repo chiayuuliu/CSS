@@ -46,7 +46,16 @@
     margin-top: 60px;
     color: #2a593e;
 }
-
+.dt-love-icon{
+    font-size: 32px;
+    color: #FB6107;
+    margin-right: 20px;
+}
+    
+.dt-name{
+        align-items: center;
+        justify-content: space-between;
+    }
 .dt-price{
     padding: auto;
     font-size: 44px;
@@ -223,6 +232,7 @@
         font-weight: bold;
         margin-top: 15px;
     }
+    
     .dt-intro{
         font-size: 16px;
     }    
