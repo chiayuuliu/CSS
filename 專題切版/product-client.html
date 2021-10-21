@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./product.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <title>良身訂做</title>
+</head>
+<style>
+    .mlr{
+        margin: auto 15px;
+    }
+    .pd-client-banner{
+        height: 100vh;
+        background-color: hsla(42, 100%, 51%, 0.18);
+    }
+    .pd-gain {
+        width: 180px;
+        height: 180px;
+        border: none;
+        border-radius: 50%;
+        background-color: white;
+        background: url(./../img/專題/增肌減脂-2.jpg)center center no-repeat; 
+        background-size: 100%;
+    }
+    .pd-slim {
+        width: 180px;
+        height: 180px;
+        border: none;
+        border-radius: 50%;
+        background-color: white;
+        background: url(./../img/專題/變瘦.jpg)center center no-repeat; 
+        background-size: 100%;
+    }
+    .pd-five {
+        width: 180px;
+        height: 180px;
+        border: none;
+        border-radius: 50%;
+        background-color: white;
+        background: url(./../img/專題/運動5次.jpg)center center no-repeat; 
+        background-size: 100%;
+    }
+    .pd-three {
+        width: 180px;
+        height: 180px;
+        border: none;
+        border-radius: 50%;
+        background-color: white;
+        background: url(./../img/專題/運動3次.jpg)center center no-repeat; 
+        background-size: 100%;
+    }
+    .pd-none {
+        width: 180px;
+        height: 180px;
+        border: none;
+        border-radius: 50%;
+        background-color: white;
+        background: url(./../img/專題/不運動.jpg)center center no-repeat; 
+        background-size: 100%;
+    }
+    .pd-target-wrap{
+        margin-top: 70px;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .pd-target-wrap h1 {
+        margin-top: 10px;
+        font-size: 32px;
+        color: #fb6107;
+        font-weight: bold;
+    }
+    
+    .pd-target p{
+        font-size: 28px;
+        color: #2a593e;
+        font-weight: bold;
+    }
+    .pd-gain-wrap, 
+    .pd-slim-wrap,
+    .pd-five-wrap,
+    .pd-three-wrap,
+    .pd-none-wrap{
+        text-align: center;
+        margin: auto 20px;
+    }
+
+</style>
+<body>
+   
+<div class="pd-client-banner d-flex">
+    <div class="pd-target-wrap d-flex col-lg-7 col-md-12">
+        <h1>我想要...</h1>
+        <form class="pd-target d-flex" action="">
+            <div class="pd-gain-wrap mlr">
+                <button class="pd-gain"></button>
+                <p>增肌減脂</p>
+            </div>
+            <div class="pd-slim-wrap mlr">
+                <button class="pd-slim "></button>
+                <p>變瘦</p>
+            </div>
+        </form>
+        <h1>我每周運動...</h1>
+        <form class="pd-target d-flex" action="">
+            <div class="pd-five-wrap">
+                <button class="pd-five"></button>
+                <p>五次以上</p>
+            </div>
+            <div class="pd-three-wrap">
+                <button class="pd-three"></button>
+                <p>三次左右</p>
+            </div>
+            <div class="pd-none-wrap">
+                <button class="pd-none"></button>
+                <p>不運動</p>
+            </div>
+        </form>
+    </div>
+    <div class="pd-client-wrap col-lg-5 col-md12">
+        <div class="pd-client-info">
+            <select name="" id="">
+                <option value="">性別</option>
+                <option value="">男</option>
+                <option value="">女</option>
+            </select>
+            <label for="years">年齡</label>
+            <input type="number" name="years" value="" class="pd-years">
+            <br>
+            <label for="height">身高</label>
+            <input type="number" name="height" value="" class="pd-height">
+            <label for="weight">體重</label>
+            <input type="number" name="weight" value="" class="pd-weight">
+        </div>
+        <div class="pd-suggest">
+            <p>每日消耗熱量1500大卡</p>
+            <p>建議每日攝取</p>
+            <p>熱量1500大卡</p>
+            <p>蛋白質50克</p>
+        </div>
+        <button class="pd-client-btn">查看飲食推薦</button>
+    </div>
+</div>
+</html>
