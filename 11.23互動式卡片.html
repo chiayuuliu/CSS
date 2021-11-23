@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .wrap{
+        width: 100%;
+        display: flex;
+    }
+    .item{
+        width: 25%;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .item img{
+        width: 100%;
+        vertical-align: middle;
+    }
+    .item .txt{
+        position: absolute;
+        top:0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.438);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        opacity: 0;
+        transition: .5s;
+    }
+    .item h2{
+        color: white;
+        font-size: 36px;
+    }
+    /* 標題下方動態跑出底線 */
+    .item h2:after{
+        content: '';
+        display: block;
+        /* 一開始寬度是0 */
+        width: 0%;
+        height: 2px;
+        margin: 10px 0;
+        background-color: white;
+        /* 設定底線寬的動畫, 跑0.5s/delay 0.2s */
+        transition: width .5s .2s;
+    }
+    .item:hover h2:after{
+        width: 100%;
+    }
+    .item p{
+        font-size: 24px;
+        color: yellow;
+    }
+    .item:hover .txt{
+        opacity: 1;
+    }
+
+</style>
+<body>
+    <div class="wrap">
+        <div class="item">
+            <img src="./img/card/大阪.jpg" alt="">
+            <div class="txt">
+                <h2>大阪</h2>
+                <p>互動式卡片練習互動式卡片練習互動式卡片練習</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./img/card/吉隆坡.jpg" alt="">
+            <div class="txt">
+                <h2>吉隆坡</h2>
+                <p>互動式卡片練習互動式卡片練習互動式卡片練習</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./img/card/曼谷.jpg" alt="">
+            <div class="txt">
+                <h2>曼谷</h2>
+                <p>互動式卡片練習互動式卡片練習互動式卡片練習</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./img/card/東京.jpg" alt="">
+            <div class="txt">
+                <h2>東京</h2>
+                <p>互動式卡片練習互動式卡片練習互動式卡片練習</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
