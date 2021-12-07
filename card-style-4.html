@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card style</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+    }
+    html, body{
+        height: 100%;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        background-color: #003;
+    }
+    .wrap{
+        width: 1200px;
+        display: flex;
+        margin: auto;
+    }
+    .item{
+        width: 368px;
+        margin: 15px;
+        text-align: center;
+        background-color: #fff;
+        transform: translateY(0px);
+        transition: .5s;
+        cursor: pointer;
+    }
+    .item img{
+        width: 100%;
+        vertical-align: middle;
+    }
+    .item h2{
+        border-bottom: 1px solid #888;
+        padding-bottom: .3em;
+        margin-bottom: .4em;
+        font-weight: 500;
+        transition: .5s;
+    }
+    .item p {
+        line-height: 1.7;
+        transition: .5s;
+    }
+    .item .txt{
+        padding:20px;
+        position: relative;
+        transition: .5s;
+    }
+    .item .txt:before{
+        content: '';
+        /* 偽元素下絕對定位後轉block */
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: 0;
+        top: 0;
+        border-top: 50px solid rgba(255, 0, 0, 0);
+        border-left: 184px solid rgb(255, 255, 255);
+        border-right: 184px solid rgb(255, 255, 255);
+        transform: translateY(-100%);
+        /* transition: .3s; */
+    }
+    .item:hover{
+        transform: translateY(-50px);
+    }
+    .item:hover .txt{
+        background-image: linear-gradient(0deg, #FB8076, #FEB85D);
+    }
+    .item:hover .txt:before{
+        border-left: 184px solid #FEB85D;
+        border-right: 184px solid #FEB85D;
+    }
+    .item:hover h2{
+        color: white;
+        border-bottom-color: white;
+    }
+    .item:hover p{
+        color: white;
+    }
+</style>
+<body>
+    <div class="wrap">
+        <div class="item">
+            <img src="./img/card/吉隆坡.jpg" alt="">
+            <div class="txt">
+                <h2>吉隆坡</h2>
+                <p>據說如果在滿月的夜晚看見皮皮們聚在一起跳舞，就能得到幸福。據說如果在滿月的夜晚看見皮皮們聚在一起跳舞，就能得到幸福。據說如果在滿月的夜晚看見皮皮們聚在一起跳舞，就能得到幸福。</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./img/card/東京.jpg" alt="">
+            <div class="txt">
+                <h2>東京</h2>
+                <p>越是能製造出強大電流的皮卡丘，臉頰上的囊就越柔軟，同時也越有伸展性。越是能製造出強大電流的皮卡丘，臉頰上的囊就越柔軟，同時也越有伸展性。越是能製造出強大電流的皮卡丘，臉頰上的囊就越柔軟。</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./img/card/馬尼拉.jpg" alt="">
+            <div class="txt">
+                <h2>馬尼拉</h2>
+                <p>雖然還是孩子，但已擁有美麗的６根尾巴。長大後尾巴會變得更多。雖然還是孩子，但已擁有美麗的６根尾巴。長大後尾巴會變得更多。雖然還是孩子，但已擁有美麗的６根尾巴。長大後尾巴會變得更多。</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
