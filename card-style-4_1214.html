@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    body{
+        padding: 100px 0px;
+        /* 固定位置，背景在正中間 */
+        background: linear-gradient(20deg, #ffffff,#79bdbc) fixed center center / 100% 100%;
+    }
+    .wrap{
+        width: 1200px;
+        margin: auto;
+    }
+    .pic img{
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
+        vertical-align: middle;
+    }
+    .pic img{
+        width: 100%;
+    }
+    .item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 60px;
+        /* background-color: lightpink; */
+    }
+    .item .pic{
+        width: 30%;
+        /* width: 55%; */
+        flex-shrink: 0;
+    }
+    .item .txt{
+        width: 60%;
+        /* width: 55%; */
+        /* background-color: lightseagreen; */
+        /* 收縮比率0 就會讓畫面凸出去 */
+        flex-shrink: 0;
+        box-sizing: border-box;
+        padding: 50px 30px;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* item 裡面的第一層的物件(pic 跟 txt ) */
+    .item > :first-child{
+        margin-right: -6%;
+    }
+    /*  item 底下的第幾個小孩 */
+    .item:nth-child(1) .txt{
+        background-color: hsla(342, 42%, 81%, 0.75);
+    }
+    .item:nth-child(2) .txt{
+        background-color: hsla(167, 64%, 65%, 0.75);
+    }
+    .item:nth-child(3) .txt{
+        background-color: rgb(254, 201, 121, 0.75);
+    }
+    .item:nth-child(4) .txt{
+        background-color: hsla(192, 49%, 72%, 0.75);
+    }
+    .txt h2{
+        margin-bottom: 10px;
+    }
+    .txt p{
+        font-weight: 300;
+    }
+
+</style>
+<body>
+    <div class="wrap">
+        <!-- item1 -->
+        <div class="item">
+            <div class="pic">
+                <img src="./img/card/吉隆坡.jpg" alt="">
+            </div>
+            <div class="txt">
+                <h2 class="title">吉隆坡</h2>
+                <p class="content">吉隆坡是馬來西亞的首都兼最大城市，一座對東南亞的文化、教育、體育、財政、經濟、商業、金融都具有極大影響力的國際大都會。</p>
+            </div>
+        </div>
+        <!-- item2 -->
+        <div class="item">
+            <div class="txt">
+                <h2 class="title">大阪</h2>
+                <p class="content">大阪市是位於日本大阪府中部的都市，為大阪府府治、以及大阪府兩個政令指定都市之一，亦是大阪都市圈、京阪神大都市圈、乃至於近畿地方的中心城市。</p>
+            </div>
+            <div class="pic">
+                <img src="./img/card/大阪.jpg" alt="">
+            </div>
+        </div>
+        <!-- item3 -->
+        <div class="item">
+            <div class="pic">
+                <img src="./img/card/東京.jpg" alt="">
+            </div>
+            <div class="txt">
+                <h2 class="title">東京</h2>
+                <p class="content">東京都區部是指日本東京都轄下的特別區，共23個，為東京都3大構成區塊之一，一般習稱東京23區、東京特別區、東京都心。</p>
+            </div>
+        </div>
+        <!-- item4 -->
+        <div class="item">
+            <div class="txt">
+                <h2 class="title">馬尼拉</h2>
+                <p class="content">馬尼拉，又稱岷里拉，馬尼剌，是菲律賓首都，位於菲律賓的最大島—呂宋島馬尼拉灣的東岸；今為菲第二大城，人口有150萬。</p>
+            </div>
+            <div class="pic">
+                <img src="./img/card/馬尼拉.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
