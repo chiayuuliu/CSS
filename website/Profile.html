@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Doris Profile</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* list-style: none; */
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+.banner{
+    width: 100%;
+    height: 600px;
+    background-image: url('./../img/website/banner-1.jpg');
+    padding-top: 100px;
+}
+.infowrap{
+    width: 70%;
+    height: 560px;
+    background-color: rgb(255, 255, 255);
+    margin: 0px auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+}
+.info{
+    display: flex;
+    align-items: center;
+    height: 500px;
+}
+.info > :first-child{
+    width: 50%;
+}
+.pic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+    
+}
+.pic{
+    height: 500px;
+}
+.intro{
+    width: 50%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #73463C;
+}
+
+.intro div{
+    margin-bottom: 15px;
+}
+.intro p{
+    margin-bottom: 40px;
+    color: #73463C;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+
+.name{
+    margin-bottom: 20px;
+    border-bottom: 2px solid #73463c82;
+    padding-bottom: 20px;
+    color: #73463C;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.intro div{
+    letter-spacing: 1px;
+}
+.intro span{
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.iconwrap{
+    width: 100%;
+    height: 60px;
+    background-color: #D9BCA3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.iconwrap i {
+    font-size: 20px;
+    margin: 0 20px;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* 第二段自介 */
+.secintro{
+    /* height: 500px; */
+    background-color: #F1F2F0;
+}
+
+.introtxt{
+    padding: 150px 0px 100px;
+    margin: auto;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.introtxt h2{
+    margin-bottom: 20px;
+}
+/* 工作經歷 */
+.resumewrap{
+    width: 850px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.resume{
+    margin: 0 auto 30px;
+    color: #73463C;
+    letter-spacing: 2px;
+}
+.wrap1{
+    /* background-color: #F1F2F0; */
+    box-shadow: 1px 1px 50px 0px rgba(211, 211, 211, 0.612);
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 45px 60px 60px;
+}
+.cvbtn{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    align-items: center;
+}
+.cvbtn .title{
+    font-size: 20px;
+    color: #1F261F;
+    font-weight: bold;
+}
+.cvbtn .resumelink{
+    font-size: 16px;
+    color: white;
+    padding: 5px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #BF8360;
+    border-radius: 100px;
+}
+.time{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #1F261F;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+.wrap1 .content{
+    width: 100%;
+}
+.company{
+    width: 30%;
+    color: #73463C;
+}
+.companyname{
+    color: #73463C;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+.content .txt{
+    width: 70%;
+}
+.txt li{
+    margin-bottom: 5px;
+}
+.txt div{
+    margin-bottom: 5px;
+    color: #73463C;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+}
+.position{
+    color: #73463C;
+    font-size: 16px;
+}
+.client{
+    color: #1F261F;
+    /* color: hsla(120, 10%, 14%, 0.66); */
+}
+</style>
+<body>
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid navbar">
+            <a class="navbar-brand" href="#">Logo</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Skill</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>              
+            </ul>         
+        </div>
+    </nav>
+<!-- banner 區 -->
+    <div class="banner">
+        <!-- <img src="./../img/website/banner.jpg" alt=""> -->
+        <div class="infowrap">
+            <div class="info d-flex">
+                <!-- 頭貼 -->
+                <div class="pic">
+                    <img src="./../img/website/avater.jpeg" alt="">
+                </div>
+                <!-- 自介內容 -->
+                <div class="intro">
+                    <h2 class="name">Doris Liu</h2>
+                    <p>Web Front Engineer</p>
+                    <div><span>Email : </span>chiayuu.liu@gmail.com</div>
+                    <div><span>Phone : </span>0953-680-007</div>
+                    <div><span>City : </span>NewTaipei City</div>
+                </div>
+            </div>
+            <div class="iconwrap">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fas fa-address-card"></i>
+            </div>
+        </div>
+    </div>
+    <!-- 簡短介紹詞 -->
+    <div class="container-fluid secintro">
+        <div class="introtxt">
+            <h2>Hello !&nbsp I'm Doris </h2>
+            <p>曾在資訊產業擔任PM，開始對於資訊相關技術感到興趣。
+                決定參加前端工程師培訓課程，喜歡透過程式語言將設計出的畫面呈現在網頁上。而寫程式所帶來的成就感也驅使我繼續學習。</p>
+        </div>
+    </div>
+    <!-- 經歷 -->
+    <div class="resumewrap">
+        <h2 class="resume">Resume</h2>
+        <div class="cvbtn">
+            <div class="title">Experience</div>
+            <div class="resumelink">My CV</div>
+        </div>
+        <!-- 工作經歷 -->
+        <div class="wrap1">
+            <div class="time">2018.6 - 2019.6</div>
+            <div class="content">
+                <div class="company">
+                    <div class="companyname">聯瞻資訊- PM、業務</div>                    
+                    <div class="client">負責客戶<br>遠傳電信<br>陽信商業銀行<br>富邦金控</div>
+                </div>
+                <div class="txt">
+                    <div>工作內容</div>
+                    <ul>
+                        <li>客戶訪談了、收集資料、統整客戶需求，確認專案規劃。</li>
+                        <li>專案時程規劃，確認工程進度、異常問題處理。</li>
+                        <li>專案協調、調派工程師，與客戶、工程師溝通。 </li>
+                        <li>協調公司資源，顧客關係維護。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="wrap2">
+            <div class="time">2019.7 - 2021.5</div>
+            <div class="time">2015.8 - 2017.9</div>
+            <div class="content">
+                <div class="company">
+                    <h2 class="position">國外業務、產品管理</h2>
+                    <div class="companyname">台南企業</div>  
+                    <div class="companyname">聚陽實業</div>                  
+                </div>
+                <div class="txt">
+                    <div>工作內容</div>
+                    <ul>
+                        <li>生產進度追蹤、產品異常問題處理，生產排程、出貨管理。</li>
+                        <li>開發進度控管、協調產能、設計稿翻譯。 尋樣詢價，檢視成本，配合公司策略進行報價調整。</li>
+                        <li>進度回報、週報進度彙整、異常問題處理，針對客戶需求回應。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+         -->
+    </div>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+</html>
