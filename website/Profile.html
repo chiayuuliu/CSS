@@ -131,14 +131,18 @@
     align-items: center;
     justify-content: center;
 }
-.resume{
+.title{
     margin: 0 auto 30px;
-    color: #73463C;
+    /* color: #73463C; */
+    color: #BF8360;
+
+    
     letter-spacing: 2px;
+    /* border-bottom: #73463C 1px solid; */
+    padding-bottom: 20px;
 }
 .wrap1{
-    /* background-color: #F1F2F0; */
-    box-shadow: 1px 1px 50px 0px rgba(211, 211, 211, 0.612);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     width: 100%;
     max-width: 1000px;
     margin: 0 auto 100px;
@@ -153,7 +157,7 @@
     margin-bottom: 30px;
     align-items: center;
 }
-.cvbtn .title{
+.cvbtn .contenttitle{
     font-size: 20px;
     color: #1F261F;
     font-weight: bold;
@@ -184,10 +188,9 @@
 .companyname{
     color: #73463C;
     font-size: 16px;
-    margin-bottom: 30px;
 }
 .content .txt{
-    width: 70%;
+    width: 60%;
 }
 .txt li{
     margin-bottom: 5px;
@@ -208,7 +211,43 @@
 }
 .client{
     color: #1F261F;
-    /* color: hsla(120, 10%, 14%, 0.66); */
+}
+
+.client :first-child{
+    color:#1f261fac;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* 技能區 */
+.skillwrap{
+    /* background-color: #D9BCA3; */
+    height: 500px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.skillbox{
+    /* background-color: #BF8360; */
+    max-width: 1000px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.skillbox img{
+    max-height: 110px;
+    object-fit: contain;
+    margin: 0px 10px;
+}
+.reactlogo,
+.php{
+   height: 90px;
 }
 </style>
 <body>
@@ -261,29 +300,33 @@
     <div class="container-fluid secintro">
         <div class="introtxt">
             <h2>Hello !&nbsp I'm Doris </h2>
-            <p>曾在資訊產業擔任PM，開始對於資訊相關技術感到興趣。
+            <p>對我來說，前端工程師就像是一位魔術師。</p>
+            <p>
+                曾在資訊產業擔任PM，開始對於資訊相關技術感到興趣。
                 決定參加前端工程師培訓課程，喜歡透過程式語言將設計出的畫面呈現在網頁上。而寫程式所帶來的成就感也驅使我繼續學習。</p>
         </div>
     </div>
     <!-- 經歷 -->
     <div class="resumewrap">
-        <h2 class="resume">Resume</h2>
+        <h2 class="title">Resume</h2>
         <div class="cvbtn">
-            <div class="title">Experience</div>
-            <div class="resumelink">My CV</div>
+            <div class="contenttitle">Experience</div>
+            <div class="resumelink">View More</div>
         </div>
-        <!-- 工作經歷 -->
+        <!-- 工作經歷卡 -->
         <div class="wrap1">
             <div class="time">2018.6 - 2019.6</div>
             <div class="content">
                 <div class="company">
                     <div class="companyname">聯瞻資訊- PM、業務</div>                    
-                    <div class="client">負責客戶<br>遠傳電信<br>陽信商業銀行<br>富邦金控</div>
-                </div>
+                    <div class="client">
+                        <p>Client：</p>
+                        遠傳電信<br>陽信商業銀行<br>富邦金控</div>
+                    </div>
                 <div class="txt">
                     <div>工作內容</div>
                     <ul>
-                        <li>客戶訪談了、收集資料、統整客戶需求，確認專案規劃。</li>
+                        <li>拜訪客戶、收集資料、統整客戶需求，確認專案規劃。</li>
                         <li>專案時程規劃，確認工程進度、異常問題處理。</li>
                         <li>專案協調、調派工程師，與客戶、工程師溝通。 </li>
                         <li>協調公司資源，顧客關係維護。</li>
@@ -291,27 +334,59 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="wrap2">
-            <div class="time">2019.7 - 2021.5</div>
-            <div class="time">2015.8 - 2017.9</div>
+        <div class="wrap1">
+            <div class="time">2019.7 - 2021.5<br>2015.8 - 2017.9</div>
             <div class="content">
                 <div class="company">
-                    <h2 class="position">國外業務、產品管理</h2>
-                    <div class="companyname">台南企業</div>  
-                    <div class="companyname">聚陽實業</div>                  
-                </div>
+                    <div class="companyname">台南企業-國外業務、產品管理</div>  
+                    <div class="companyname">聚陽實業-國外業務</div>                   
+                    <div class="client">
+                        <p>Client：</p>
+                        Macy's<br>A&F<br>Sketchers</div>
+                    </div>
                 <div class="txt">
                     <div>工作內容</div>
                     <ul>
-                        <li>生產進度追蹤、產品異常問題處理，生產排程、出貨管理。</li>
-                        <li>開發進度控管、協調產能、設計稿翻譯。 尋樣詢價，檢視成本，配合公司策略進行報價調整。</li>
-                        <li>進度回報、週報進度彙整、異常問題處理，針對客戶需求回應。</li>
+                        <li>生產進度追蹤、產品問題處理，生產排程、出貨管理。</li>
+                        <li>開發報價、協調產能、供應商接洽、檢視成本。</li>
+                        <li>產品進度回報、進出貨控管、貨款核對，回應客戶需求。</li>
+                        <li>協調公司資源，顧客關係維護。</li>
                     </ul>
                 </div>
             </div>
         </div>
-         -->
     </div>
+    <!-- 技能 -->
+    <div class="container-fluid skillwrap">
+        <h2 class="title">Skill & Expertise</h2>
+        <!-- 這裡寬度限制 -->
+        <div class="skillbox">
+            <img src="./htmlcssjs.jpeg" alt="">            
+            <img src="./Bootstrap.png" alt="">
+            <img class="reactlogo" src="./React_new.png" alt="">
+            <img src="./mysql.png" alt="">
+            <img src="./nodejs.png" alt="">            
+            <img src="./jquery.svg" alt="">
+            <img src="./figma.jpeg" alt="">
+            <img src="./Github.png" alt="">
+            <img src="./Photoshop.png" alt="">
+            <!-- <img class="php" src="./php.png" alt=""> -->
+        </div>
+       
+    </div>
+    <!-- 作品集 -->
+    <div class="container-fluid profile">
+        <h2 class="title">Portfolio &
+            Project</h2>
+        <div class="projectwrap">
+            <div class="projectimg"></div>
+            <div class="pjtxt">
+                <h2 class="pjname"></h2>
+                <p class="pjcontent"></p>
+            </div>
+        </div>
+    </div>
+
 
 
 
