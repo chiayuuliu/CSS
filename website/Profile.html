@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <title>Doris Profile</title>
 </head>
 <style>
@@ -132,14 +133,10 @@
     justify-content: center;
 }
 .title{
-    margin: 0 auto 30px;
-    /* color: #73463C; */
+    margin: auto;
     color: #BF8360;
-
-    
     letter-spacing: 2px;
-    /* border-bottom: #73463C 1px solid; */
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 }
 .wrap1{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -171,6 +168,7 @@
     background-color: #BF8360;
     border-radius: 100px;
 }
+
 .time{
     font-size: 18px;
     margin-bottom: 20px;
@@ -225,7 +223,7 @@
 .skillwrap{
     /* background-color: #D9BCA3; */
     height: 500px;
-    margin-bottom: 100px;
+    margin-bottom: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -248,6 +246,181 @@
 .reactlogo,
 .php{
    height: 90px;
+}
+
+/* 作品區 */
+.Portfolio{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.projectwrap{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    max-width: 1000px;
+    margin-bottom: 80px;
+}
+.projectimg{
+    width: 55%;
+    z-index: 1;
+    flex-shrink: 0;
+}
+.projectimg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+.pjtxt{
+    width: 55%;
+    background-color: hsla(28, 67%, 85%, 0.502);
+    padding: 30px 30px;
+    z-index: 2;
+    flex-shrink: 0;
+
+}
+.projectwrap > :first-child{
+        margin-right: -6%;
+    }
+/* 作品集 */
+.pj-wrap{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 200px;
+}
+.pj-background{
+    position: relative;
+    display: flex;
+    height: 500px;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: aqua;
+    background: url(./作banner.jpeg) no-repeat center / 100% auto;
+}
+.backcover{
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    background-color: hsla(28, 42%, 75%, 0.6);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.pj-img{
+    width: 350px;
+    /* width: 25%; */
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    transition: .5s;
+}
+.pj-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.img-cover{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: hsla(0, 0%, 0%, 0.654);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    padding: 15px 20px 10px;
+    transform: translateY(250px);
+    opacity: 0;
+    transition: .5s;
+}
+.pj-img:hover .img-cover{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.pj-img:hover {
+    transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+.pj-link{
+    text-decoration: none;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #D9BCA3;
+    font-weight: bold;
+    transition: .3s;
+}
+.pj-link:hover i{
+    transform: translateX(0px);
+    opacity: 1;
+    color: #D9BCA3;
+}
+.pj-link:hover{
+    color: #D9BCA3;
+    letter-spacing: 1px;
+}
+.pj-link i{
+    margin-left: 10px;
+    transform: translateX(-25px);
+    opacity: 0;
+    transition: .5s;
+}
+/* 聯絡表單 */
+.contactwrap{
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 200px;
+}
+.contactform{
+    width: 600px;
+    margin-bottom: 200px;
+    background-color: #F1F2F0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+    padding: 50px 100px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 10px 60px -30px;
+}
+.contactform input,textarea{
+    border: none;
+    margin-bottom: 30px;
+    width: 400px;
+    height: 40px;
+}
+.contactform label{
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #73463C;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+textarea{
+    height: 100px;
+}
+.submitbtn{
+    width: 200px;
+    border: none;
+    background-color: #D9BCA3;
+    padding: 10px 20px;
+    margin: 20px auto 0px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #F1F2F0;
+    transition: .5s;
+}
+.submitbtn:hover{
+    background-color: #73463C;
+}
+textarea:focus,
+input:focus{
+    outline: none;
+    border-bottom: 2px solid #BF8360;
 }
 </style>
 <body>
@@ -273,15 +446,14 @@
     </nav>
 <!-- banner 區 -->
     <div class="banner">
-        <!-- <img src="./../img/website/banner.jpg" alt=""> -->
         <div class="infowrap">
-            <div class="info d-flex">
+            <div class="info d-flex ">
                 <!-- 頭貼 -->
-                <div class="pic">
+                <div class="pic animate__animated animate__fadeInLeft">
                     <img src="./../img/website/avater.jpeg" alt="">
                 </div>
                 <!-- 自介內容 -->
-                <div class="intro">
+                <div class="intro animate__animated animate__fadeInRight">
                     <h2 class="name">Doris Liu</h2>
                     <p>Web Front Engineer</p>
                     <div><span>Email : </span>chiayuu.liu@gmail.com</div>
@@ -375,24 +547,60 @@
        
     </div>
     <!-- 作品集 -->
-    <div class="container-fluid profile">
+    <div class="pj-wrap">
         <h2 class="title">Portfolio &
             Project</h2>
-        <div class="projectwrap">
-            <div class="projectimg"></div>
-            <div class="pjtxt">
-                <h2 class="pjname"></h2>
-                <p class="pjcontent"></p>
+        <div class="pj-background">
+            <div class="backcover"></div>
+            <!-- 作品一 -->
+            <div class="pj-img">
+                <img src="./pj-商品區.png" alt="">
+                <div class="img-cover" >
+                    <p class="pj-title">專題商品區</p>
+                    <p class="pj-skill">使用技術：ReactJS、CSS、Nodejs、Mysql</p>
+                    <!-- <p class="pj-content">商品陳列有篩選、關鍵字查詢、頁數...功能。</p> -->
+                    <a class="pj-link" href="https://github.com/heyyoUna/React-food-project">View More<i class="fas fa-angle-double-right"></i></a>
+                    
+                </div>
+            </div>
+            <!-- 作品二 -->
+            <div class="pj-img">
+                <img src="./pj-驗證碼.png" alt="">
+                <div class="img-cover" >
+                    <p class="pj-title">Captcha驗證判斷功能</p>
+                    <p class="pj-skill">使用技術：JS & CSS</p>
+                    <a class="pj-link" href="https://chiayuuliu.github.io/JS/Captcha.html">View More<i class="fas fa-angle-double-right"></i></a>
+                </div>
+            </div>
+            <!-- 作品三 -->
+            <div class="pj-img">
+                <img src="./pj-切版.png" alt="">
+                <div class="img-cover" >
+                    <p class="pj-title">RWD網頁切版</p>
+                    <p class="pj-skill">使用技術：CSS、Bootstrap</p>
+                    <a class="pj-link" href="https://chiayuuliu.github.io/website/">View More<i class="fas fa-angle-double-right"></i></a>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- contact -->
+    <div class="contactwrap">
+        <h2 class="title">Contact Me</h2>
+        <form class="contactform" action="https://getform.io/f/03a5fa01-71f1-42ef-90b0-d9445003601d" method="POST">  
+            <label for="name">Name</label>
+            <input type="text" name="name">
+            <label for="email">Email</label>
+            <input type="email" name="email">
+            <label for="message">Message</label>
+            <textarea name="message" id="" cols="30" rows="5"></textarea>
+            <button class="submitbtn" type="submit">Send</button>
+        </form>
+    </div>
+    
 
-
-
-
-
-
+            
+       
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
 </html>
