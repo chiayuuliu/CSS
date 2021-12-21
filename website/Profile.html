@@ -632,8 +632,7 @@ input:focus{
             <input type="email" name="email" class="contactemail">
             <label for="message">Message</label>
             <textarea name="message" cols="30" rows="5" class="contactmessage"></textarea>
-            <!-- <button class="submitbtn" type="submit">Send</button> -->
-            <button class="submitbtn" >Send</button>
+            <button class="submitbtn" type="submit">Send</button>
         </form>
     </div>
     
@@ -643,14 +642,12 @@ input:focus{
     const submitbtn = document.querySelector('.submitbtn')
     
     submitbtn.addEventListener('click',e=>{
-        e.preventDefault()
         const nameVal = document.querySelector('.contactname').value
         const emailVal = document.querySelector('.contactemail').value
         const msgVal = document.querySelector('.contactmessage').value
         if(!nameVal || !emailVal || !msgVal){
+            e.preventDefault()
             alert('請填完整資訊唷～謝謝！')
-        }else{
-            console.log('ok')
         }
     })
 </script>
