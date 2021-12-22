@@ -367,16 +367,41 @@ nav{
     transform: scale(1.05);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
+.demolink a,
 .pj-link{
+    margin: 0 auto;
     text-decoration: none;
     border-bottom: 0px;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
     color: #D9BCA3;
     font-weight: bold;
     transition: .3s;
 }
+.pj-link{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+.demolink {
+    border-radius: 100%;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    /* background-color: white; */
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color:lightgray;
+    transition: .3s;
+    border-bottom: width 0%;
+}
+.demolink:hover  {
+    background-color: white;
+}
+.demolink:hover a {
+    color: #73463C;
+}
+
 .pj-link:hover .backarrow{
     transform: translateX(0px);
     opacity: 1;
@@ -594,7 +619,7 @@ input:focus{
                 <div class="img-cover" >
                     <p class="pj-title">專題商品區</p>
                     <p class="pj-skill">使用技術：ReactJS、CSS、Nodejs、Mysql</p>
-                    <!-- <p class="pj-content">商品陳列有篩選、關鍵字查詢、頁數...功能。</p> -->
+                    <div class="demolink"><a href="https://www.youtube.com/watch?v=oTZ3ihKWgoY&ab_channel=ChiaYuLiu"><i class="fas fa-link"></i></a></div>
                     <a class="pj-link" href="https://github.com/heyyoUna/React-food-project">
                         <i class="fas fa-angle-double-right frontarrow"></i>View More
                         <i class="fas fa-angle-double-right backarrow"></i>
