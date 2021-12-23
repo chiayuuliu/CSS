@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./webicon.jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -665,18 +666,27 @@ input:focus{
             <label for="message">Message</label>
             <textarea name="message" cols="30" rows="5" class="contactmessage"></textarea>
             <button class="submitbtn" type="submit">Send</button>
+            <!-- <button class="submitbtn" >Send</button> -->
         </form>
-    </div>
-    
-
-            
+    </div>            
 <script>
     const submitbtn = document.querySelector('.submitbtn')
-    
+    const name=document.querySelector('.contactname')
+    const email = document.querySelector('.contactemail')
+    const msg = document.querySelector('.contactmessage')
+
+
+    // 網頁呈現的時候把表單資訊清空
+    window.onpageshow = function() {
+        name.value=''
+        email.value=''
+        msg.value=''
+    };
+
     submitbtn.addEventListener('click',e=>{
-        const nameVal = document.querySelector('.contactname').value
-        const emailVal = document.querySelector('.contactemail').value
-        const msgVal = document.querySelector('.contactmessage').value
+        const nameVal = name.value
+        const emailVal = email.value
+        const msgVal = msg.value
         if(!nameVal || !emailVal || !msgVal){
             e.preventDefault()
             alert('請填完整資訊唷～謝謝！')
