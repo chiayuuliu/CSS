@@ -165,7 +165,7 @@ nav{
 /* 工作經歷 */
 .resumewrap{
     width: 900px;
-    margin: 100px auto;
+    margin: 100px auto 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -277,8 +277,9 @@ nav{
 
 /* 技能區 */
 .skillwrap{
+    padding-top: 100px;
     height: 500px;
-    margin: 100px 0px;
+    /* margin-top: 100px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -301,12 +302,19 @@ nav{
 .php{
    height: 90px;
 }
+#skill{
+    /* height: 1px;  
+    width: 100%; */
+    /* background-color: #73463C; */
+}
 
 /* 作品集 */
 .pj-wrap{
     display: flex;
     flex-direction: column;
-    margin-bottom: 200px;
+    /* margin-top: 100px; */
+    padding-top: 100px;
+    margin-bottom: 100px;
 }
 .pj-background{
     position: relative;
@@ -387,7 +395,6 @@ nav{
     height: 40px;
     width: 40px;
     line-height: 40px;
-    /* background-color: white; */
     position: absolute;
     bottom: 10px;
     left: 20px;
@@ -409,8 +416,6 @@ nav{
 }
 .pj-link:hover{
     color: #D9BCA3;
-    /* letter-spacing: 1px; */
-
 }
 .pj-link .backarrow{
     margin-left: 10px;
@@ -430,9 +435,10 @@ nav{
 }
 /* 聯絡表單 */
 .contactwrap{
+    padding-top: 100px;
     display: flex;
     flex-direction: column; 
-    margin-bottom: 200px;
+    margin-bottom: 80px;
 }
 .contactform{
     width: 600px;
@@ -536,7 +542,7 @@ input:focus{
     </div>
     <!-- 經歷 -->
     <div id="resume"></div>
-    <div class="resumewrap"  >
+    <div class="resumewrap">
         <h2 class="title">Resume</h2>
         <div class="cvbtn">
             <div class="contenttitle">Experience</div>
@@ -588,8 +594,7 @@ input:focus{
         </div>
     </div>
     <!-- 技能 -->
-    <div ></div>
-    <div class="container-fluid skillwrap"id="skill">
+    <div class="container-fluid skillwrap" id="skill">
         <h2 class="title">Skill & Expertise</h2>
         <!-- 這裡寬度限制 -->
         <div class="skillbox">
@@ -602,13 +607,11 @@ input:focus{
             <img src="./figma.jpeg" alt="">
             <img src="./Github.png" alt="">
             <img src="./Photoshop.png" alt="">
-            <!-- <img class="php" src="./php.png" alt=""> -->
         </div>
        
     </div>
     <!-- 作品集 -->
-    <div id="project"></div>
-    <div class="pj-wrap">
+    <div class="pj-wrap"id="project">
         <h2 class="title">Portfolio &
             Project</h2>
         <div class="pj-background">
@@ -652,8 +655,7 @@ input:focus{
     </div>
 
     <!-- contact -->
-    <div id="contact"></div>
-    <div class="contactwrap">
+    <div class="contactwrap" id="contact">
         <h2 class="title">Contact Me</h2>
         <form class="contactform" action="https://getform.io/f/03a5fa01-71f1-42ef-90b0-d9445003601d" method="POST">  
             <label for="name">Name</label>
