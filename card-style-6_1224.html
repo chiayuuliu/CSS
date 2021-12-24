@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .wrap{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(-30deg, #fdaecb, #e7597f, #fe8556);
+    }
+    .container{
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    /* 每個寬度400 */ 
+    .item{
+        width: 570px;
+        margin: 20px 15px;
+        display: flex;
+        background-color: white;
+        transition: .3s;
+        cursor: pointer;
+        /* box-shadow: 0 10px 30px rgba(100, 0, 0, .5); */
+    }
+    .item:hover{
+        transform: translateY(-6px);
+        box-shadow: 0 10px 30px rgba(100, 0, 0, .5);
+
+    }
+    .pic{
+        width: 50%;
+    }
+    .pic img{
+        /* width: 400px;
+        height: 400px; */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .txt{
+        width: 50%;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        /* 拿掉之後，就會對齊最上面 */
+        /* justify-content: center; */
+    }
+    .txt h2{
+        margin-bottom: .4em;
+    }
+    .txt p{}
+    .txt .btn{
+        line-height: 1.5em;
+        border: 1px solid lightgray;
+        padding: 0 1em;
+        align-self:flex-end;
+        border-radius: 100px;
+        text-decoration: none;
+        /* 讓每個按鈕上面間距一致 */
+        margin-top: auto;
+        color: #aaa;
+    }
+    .btn:hover{
+        background-color: lightgray;
+        color: white;
+    }
+</style>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="item">
+                <div class="pic">
+                    <img src="/img/card/大阪.jpg" alt="">
+                </div>
+                <div class="txt">
+                    <h2>大阪</h2>
+                    <p>大阪市是位於日本大阪府中部的都市，為大阪府府治、以及大阪府兩個政令指定都市之一，亦是大阪都市圈、京阪神大都市圈、乃至於近畿地方的中心城市。</p>
+                    <a href="" class="btn">more</a>
+
+                </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <img src="/img/card/東京.jpg" alt="">
+                </div>
+                <div class="txt">
+                    <h2>東京</h2>
+                    <p>東京都區部是指日本東京都轄下的特別區，共23個，為東京都3大構成區塊之一，一般習稱東京23區、東京特別區、東京都心。</p>
+                    <a href="" class="btn">more</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <img src="/img/card/馬尼拉.jpg" alt="">
+                </div>
+                <div class="txt">
+                    <h2>馬尼拉</h2>
+                    <p>馬尼拉，又稱岷里拉，馬尼剌，是菲律賓首都，位於菲律賓的最大島—呂宋島馬尼拉灣的東岸；今為菲第二大城，人口有150萬。</p>
+                    <a href="" class="btn">more</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <img src="/img/card/新加坡.jpg" alt="">
+                </div>
+                <div class="txt">
+                    <h2>新加坡</h2>
+                    <p>新加坡共和國，別稱獅城，通稱星國、星洲、新加坡或星加坡，是位於東南亞的城邦島國、城市國家。該國位於中南半島最南端</p>
+                    <a href="" class="btn">more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
