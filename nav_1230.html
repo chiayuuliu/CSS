@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>nav bar</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    header{
+        /* background: linear-gradient(0deg, #fe70d8,#3713c1 ); */
+        background-image: linear-gradient(15deg, #667eea 0%, #764ba2 100%);
+    }
+    header .logo{
+        width: 80px;
+    }
+    .logo img{
+        width: 100%;
+        /* 為何圖片有vertical align 的問題？？ */
+        vertical-align: middle;
+    }
+    .main-nav{
+        margin: auto;
+    }
+    .main-nav a{
+        margin: 0 30px;
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 1em;
+        position: relative;
+        font-size: 20px;
+        letter-spacing: 1px;
+        transform: translateY(-10px);
+        transition: .3s;
+    }
+    .main-nav a:hover{
+        transform: translateY(-5px);
+    }
+    /* 超連結下方動態線 */
+
+    .main-nav a:after{
+        content: '';
+        position: absolute;
+        /* **從中間往兩邊跑：距離左右50% 寬度就會是0 */
+        left: 50%;
+        right: 50%;
+
+        /* 從左至右跑，絕對定位在左邊0寬度0 hover 的時候寬度再變100% */
+        /* left: 0;
+        width: 0%; */
+        height: 0;
+        bottom: -10px;
+        border-bottom: 1px solid #fff;
+        transition: .3s;
+    }
+    /* a連結被摸到的時候 after 的變化 */
+    .main-nav a:hover:after{
+        /* 從中間往兩邊跑，絕對定位最後設定左右各0 就會是全長 */
+        left: 0;
+        right: 0;
+
+        /* 從左往右跑的寫法 */
+        /* width: 100%; */
+    }
+
+    .container{
+        display: flex;
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+        /* background-color: bisque; */
+        align-items: center;
+    }
+    .header-search {
+        display: flex;
+    }
+    .header-search button,
+    .header-search input{
+        border: none;
+        background-color: #fff; 
+        padding: 10px 15px;
+    }
+
+    .header-search button:focus,
+    .header-search input:focus{
+        outline: none;
+    }
+
+    .header-search button{
+        cursor: pointer;
+        border-radius: 0 200px 200px 0;
+    }
+
+    .header-search input{
+        border-radius: 200px 0px 0px 200px;
+    }
+</style>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <a href="" class="logo">
+                <img src="./website/webicon.jpg" alt="">
+            </a>
+            <nav class="main-nav">
+                <a href="">About</a>
+                <a href="">Resume</a>
+                <a href="">Skills</a>
+                <a href="">Contact</a>
+            </nav>
+            <form action=""class="header-search">
+                <input type="search">
+                <button><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </header>
+    
+</body>
+</html>
