@@ -31,9 +31,11 @@
         width: 100%;
         vertical-align: middle;
     }
+    /* 第一個item 寬地設定50% */
     .item:first-child{
         width: 50%;
     }
+    /* 除了第一個以外，到後面的item寬度 */
     .item:first-child ~ .item{
         width: 25%;
     }
@@ -54,6 +56,7 @@
         align-items: center;
         transition: 0.5s ease-in-out;
         cursor: pointer;
+        /* 從0.5的大小最後hover的時候在開最大 */
         transform: scale(0.5);
 
     }
