@@ -25,6 +25,7 @@
         background-color: #546377;
     }
     .side-menu{
+        position: relative;
         width: 300px;
         height: 100%;
         /* 由下往上漸層 */
@@ -34,6 +35,8 @@
         box-sizing: border-box;
         transition: .5s;
         box-shadow: 5px 0px 15px hsla(240, 40%, 20%, .6);
+        /* 自己的寬度100% ? */
+        transform: translateX(-100%);
     }
     
     .side-menu form{
@@ -67,7 +70,6 @@
         cursor: pointer;
     }
 
-
     nav a{
         display: block;
         padding: 10px;
@@ -90,8 +92,6 @@
         text-decoration: none;
     }
     nav i{
-        /* margin-right: -1.1em;
-        transform: scale(0); */
         transition: .5s;
     }
     nav a:hover i{
@@ -103,11 +103,47 @@
     nav a:hover {
         text-decoration: none;
         color: white;
-        /* transform: translateX(5px); */
+        /* 標題放大效果 */
         transform: scale(1.05);
+    }
+    /*  收合控制器 */
+    .side-menu label{
+        position: absolute;
+        width: 40px;
+        height: 80px;
+        background-color: #000;
+        color: white;
+        text-align: center;
+        line-height: 80px;
+        top: 0;
+        bottom: 0;
+        /* -40 才會突出去 */
+        right: -40px;
+        margin: auto ;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+    }
+
+    .side-menu label i{
+        margin-right: 0;
+        transition: .3s;
+    }
+    #side-menu-switch{
+        display: none;
+    }
+    /* 被checked 的時候後面 的sidemenu 跑出來 */
+    #side-menu-switch:checked + .side-menu{
+        transform: translateX(0);
+    }
+    /* 不能直接寫 #side-menu-switch:checked + label，因為label 沒有跟在side-menu-switch的後面，會選不到*/
+    #side-menu-switch:checked + .side-menu label i{
+        /* 兩種寫法都可以轉180度 */
+        /* transform: scaleX(-1); */
+        transform: rotate(180deg);
     }
 </style>
 <body>
+    <input type="checkbox" name="" id="side-menu-switch">
     <div class="side-menu">
         <form action="">
             <input type="search" placeholder="請輸入關鍵字" >
@@ -120,6 +156,11 @@
             <a href=""><i class="fas fa-user"></i>會員中心</a>
             <a href=""><i class="far fa-handshake"></i>與我們合作</a>
         </nav>
+        <!-- 指向input 的id 就會控制到他 -->
+        <label for="side-menu-switch">
+            <i class="fas fa-chevron-right"></i>
+        </label>
     </div>
+    
 </body>
 </html>
