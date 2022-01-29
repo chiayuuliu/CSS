@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    html, body{
+        height: 100%;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        background-color: #546377;
+    }
+    .list{
+        /* 也可以只下margin auto */
+        /* margin: auto; */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .list li{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 150px;
+        height: 150px;
+        background-image: linear-gradient(0deg, #185a9d, #43cea2);
+        justify-content: center;
+        border-radius: 50%;
+        position: relative;
+        font-size: 20px;
+        color: #fff;
+        /* 用box shadow 做邊框 */
+        box-shadow: 0px 0px 0px 4px #fff;
+    }
+    .list li i {
+        font-size: 34px;
+        margin-bottom: 6px;
+    }
+    /* 前面有li的li */
+    .list li + li{
+        margin-left: 100px;
+    }
+    .list li + li::before{
+        content: " ";
+        position: absolute;
+        width: 100px;
+        height: 3px;
+        background-color: #43cea2;
+        left: -100px;
+        z-index: -1;
+    }
+    /* 有active 的class name 後面的所有li都改灰色背景 */
+    .list li.active ~li{
+        background-image: linear-gradient(0deg, #999, #ccc);
+        box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0);
+    }
+    .list li.active ~li::before{
+        background-color: #999;
+    }
+
+</style>
+<body>
+    <ul class="list" >
+        <li>
+            <i class="far fa-file-alt"></i>
+            收到訂單
+        </li>
+        <li class="active">
+            <i class="fas fa-archive"></i>
+            檢貨中
+        </li>
+        <li>
+            <i class="fas fa-truck"></i>
+            運送中
+        </li>
+        <li>
+            <i class="far fa-check-circle"></i>
+            已送達
+        </li>
+    </ul>
+</body>
+</html>
