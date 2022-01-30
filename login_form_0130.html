@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入表單</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    html, body{
+        height: 100%;
+    }
+    body{
+        background: url("/img/French\ Riviera.jpeg") no-repeat center center / cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .login{
+        width: 600px;
+        height: 500px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 10px solid #fff;
+        border-radius: 10px;
+        color: white;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.589);
+        /* filter 效果 */
+        backdrop-filter: blur(4px);
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+    }
+    .form{
+        width: 400px;
+    }
+    .form h2{
+        letter-spacing: 5px;
+        text-align: center;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #fff;
+        font-weight: 500;
+    }
+    .form .group{
+        margin-bottom: 20px;
+    }
+    .form label{
+        line-height: 2;
+    }
+    /* 讓input 100%寬，自動會換行 */
+    .form input{
+        width: 100%;
+        border: 1px solid #aaa;
+        /* 研究*** */
+        line-height: 3;
+        border-radius: 5px;
+        padding-left:5px ;
+    }
+    .form .btn-group{
+        font-size: 0;
+    }
+    .form .btn{
+        font-size: 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #6ab4fe;
+        width: 190px;
+        padding: 10px 0;
+        color: #fff;
+        margin-top: 50px;
+        cursor: pointer;
+    }
+    .form .btn + .btn{
+        margin-left: 20px;
+    }
+    /* 為什麼沒用？ */
+    /* .btn-group:first-child{
+        margin-right: 20px;
+    } */
+    input:focus{
+        outline: none;
+    }
+</style>
+<body>
+    <div class="login">
+        <form action="" class="form">
+            <h2>會員登入</h2>
+            <div class="group">
+                <label for="user_id">帳號</label>
+                <input type="text" name="" id="user_id">
+            </div>
+            <div class="group">
+                <label for="user_password">密碼</label>
+                <input type="password" name="" id="user_password">
+            </div>
+            <div class="btn-group">
+                <button class="btn" >登入</button>
+                <button class="btn">取消</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
