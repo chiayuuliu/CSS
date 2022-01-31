@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS定位與實作</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        /* border: 1px solid black; */
+        list-style: none;
+        box-sizing: border-box;
+    }
+    html,body{
+        background-color: rgb(138, 194, 196);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        font-size: 14px;
+    }
+    a{
+        color: initial;
+        text-decoration: initial;
+    }
+    .box{
+        width: 400px;
+        margin: auto;
+        background-color: #fff;
+        box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.3);
+        transition: .5s;
+        cursor: pointer;
+    }
+    .box:hover{
+        box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.3);
+        transform: translate( -5px, -5px);
+    }
+    .top{
+        background-image: url(https://imgs.niusnews.com/upload/posts/po3_66809_1527441762.jpg);
+        background-size: cover;
+        /* background-position: center; */
+        height: 330px;
+        position: relative;
+    }
+    .top .name{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 5px 15px;
+        letter-spacing: 2px;
+        color: #fff;
+        font-weight: 300;
+        /* 讓標題底部漸層陰影效果做法 */
+        background: linear-gradient(transparent 0%, black 100%);
+        width: 100%;
+        padding-top: 30px;
+        padding-bottom: 15px;
+    }
+    .top .name .smallText{
+        font-size: 14px;
+    }
+    .top .tag{
+        width: 25px;
+        height: 50px;
+        background-color: lightblue;
+        float: right;
+        margin-right: 20px;
+    }
+    .cirbtn{
+        width: 50px;
+        height: 50px;
+        background-color: lightblue;
+        border-radius: 50%;
+        position: absolute;
+        right: 30px;
+        bottom: -25px;
+    }
+    /* 資訊欄 */
+    .bottom{
+        padding:10px 20px 20px 20px;
+    }
+    .bottom li{
+        padding: 5px 0;
+    }
+    .bottom h3{
+        display: inline-block;
+
+    }
+    .buttons{
+        margin-top: 30px;
+    }
+    .buttons .btn{
+        display: inline-block;
+        padding: 10px 25px;
+        letter-spacing: 2px;
+    }
+    /* 用float 寫法 */
+    .btnNews{
+        float: right;
+    }
+    /* display flex 寫法 */
+    /* .buttons{
+        display: flex;
+        justify-content: space-between;
+    } */
+
+    .btnWebsite{
+        background-color: lightblue;
+    }
+    .btnWebsite:hover{
+        background-color: rgba(173, 216, 230, 0.699);
+    }
+    .btnNews{
+        border: 1px solid transparent;
+        transition: .5s;
+    }
+    .btnNews:hover{
+        /* background-color: rgba(173, 216, 230, 0.699); */
+        border: 1px solid rgb(159, 159, 159);
+    }
+</style>
+<body>
+    <div class="box">
+        <div class="top">
+            <h2 class="name">浮光書店
+                <span class="smallText" >IlluminationBooks</span>
+            </h2>
+            <div class="tag"></div>
+            <div class="cirbtn"></div>
+        </div>
+        <!-- 資訊卡 -->
+        <div class="bottom">
+            <ul>
+                <li>
+                    <!-- 把h3 設定成inline bloack 就會跟下面同一行，不會撐滿整行 -->
+                    <h3>地址：</h3>
+                    103台北市大同區赤峰街47巷16號2樓
+                </li>
+                <li>
+                    <h3>電話：</h3>
+                    02-2550-7288
+                </li>
+                <li>
+                    <h3>營業時間：</h3>
+                    12:00-22:00
+                </li>
+            </ul>
+            <div class="buttons">
+                <a class="btn btnWebsite" href="https://www.facebook.com/IlluminationBooks/" target="_blank">前往網站</a>
+                <a class="btn btnNews" href="https://nash.tw/illuminationbooks/" target="_blank">更多訊息</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
