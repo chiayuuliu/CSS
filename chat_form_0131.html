@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        /* border: 1px solid black; */
+    }
+    html, body{
+        height: 100%;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:  #d3effb;
+    }
+    .dialogue{
+        width: 500px;
+        padding: 20px;
+        box-shadow: 0 0 10px #3e92cc;
+        background-color: #f4f5f7;
+    }
+    .user{
+        display: flex;
+        margin-bottom: 20px;
+        /* flex 特性會讓裡面元素都等高，下次軸對齊方式，就可以依照內容物撐高 */
+        align-items: flex-start;
+    }
+    .user .avatar{
+        width: 60px;
+        text-align: center;
+        /* flex 特性會把所有東西都撐在div裏，下這個語法可以解決讓他自然撐大 */
+        flex-shrink: 0;
+    }
+    .user .pic{
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .user .pic img{
+        width: 100%;
+        object-fit: cover;
+        /* 研究此語法跟圖片關係 */
+        vertical-align: middle;
+    }
+    .user .txt{
+        background-color: #ccc;
+        padding: 16px;
+        border-radius: 10px;
+        /* 讓文字的三角形區塊可以定位 */
+        position: relative;
+    }
+    .remote .txt{
+        margin-left: 20px;
+        /* 人像圖寬60,文字距圖片20 總共margin下80 */
+        margin-right: 80px;
+        color: #a1b4c5;
+        background-color: #fff;
+    }
+    .local{
+        justify-content: flex-end;
+    }
+    .local .txt{
+        margin-right: 20px;
+        margin-left: 80px;
+        order: -1;
+        background-color: #3e92cc;
+        color: #fff;
+    }
+    .remote .txt::before,
+    .local .txt::before{
+        content: "";
+        position: absolute;
+        top: 15px;
+        border-top: 13px solid transparent;
+        border-bottom: 13px solid transparent;
+    }
+    .remote .txt::before{
+        border-right: 10px solid #fff;
+        /* border-left: 10px solid red; */
+        /* 因為border 寬是10 */
+        left: -10px;
+
+    }
+    .local .txt::before{
+        border-left: 10px solid #3e92cc;
+        right: -10px;
+    }
+
+ 
+</style>
+<body>
+    <div class="dialogue">
+        <div class="user remote">
+            <div class="avatar">
+                <div class="pic">
+                    <img src="./img/avatar.png" alt="">
+                </div>
+                <div class="name">Doris</div>
+            </div>
+            <div class="txt">Hi 好久不見 Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni veniam ex consequuntur quos ullam nostrum, ipsum, repudiandae voluptates illo officia sed dolor repellat pariatur iusto provident obcaecati officiis ad quia.</div>
+        </div>
+        <div class="user local">
+            <div class="avatar">
+                <div class="pic">
+                    <img src="./img/專題/person1.jpg" alt="">
+                </div>
+                <div class="name">Joanne</div>
+            </div>
+            <div class="txt">最近還好嗎</div>
+        </div>
+    </div>
+    
+</body>
+</html>
