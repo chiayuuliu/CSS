@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        /* border: 1px solid black; */
+    }
+    body{
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+        background-color: #02005B;
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 15px;
+        line-height: 28px;
+        letter-spacing: 1px;
+    }
+    /* 複寫區 */
+    ul{
+        padding: 0px;
+        list-style: none;
+    }
+    h2{
+        margin: 0;
+        margin-bottom: 25px;
+        font-weight: 400;
+    }
+    h2::after{
+        content: " ";
+        display: inline-block;
+        width: 20px;
+        height: 8px;
+        background-color: #FF7168;
+        margin-left: 10px;
+    }
+
+    h4{
+        margin: 0;
+        margin-top: 40px;
+        opacity: 0.8;
+        font-weight: 400;
+    }
+    a{
+        color: white;
+        margin-top: none;
+    }
+    hr{
+        border: none;
+        border-bottom: 4px solid #FF7168;
+        width: 40%;
+        /* 下這個語法會自動貼左對齊 */
+        margin-left: 0;
+    }
+
+    .resume{
+        display: flex;
+        max-width: 950px;
+        min-width: 800px;
+        border: 8px solid white;
+        padding: 50px;
+        position: relative;
+    }
+    .left{
+        flex: 5;
+    }
+    .right{
+        flex: 7;
+    }
+    .left,.rigth{
+        padding: 15px;
+    }
+    /* 要下在這裡才會有作用，如果往前移，語法會被蓋掉 */
+    .left{
+        padding-right: 50px;
+        border-right: solid 1px #FF7168;
+    }
+    .right{
+        padding-top: 150px;
+        padding-left: 50px;
+    }
+
+    .decoration{
+        width: 300px;
+        height: 140px;
+        background: linear-gradient(135deg, #FF5F5F,#FFFFAE);
+        border-radius: 100px 0px 0px 100px;
+        position: absolute;
+        right: 0;
+        top: 50px;
+    }
+
+    /* 年份與經歷 */
+    .listExperience>li{
+        display: flex;
+        margin-bottom: 10px;
+    }
+    .listExperience li ul{
+        padding-left: 10px;
+        margin-left: 10px;
+        border-left: solid 4px white;
+    }
+    .listSkill{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .listSkill li{
+        display: flex;
+        width: 25%;
+        padding: 5px;
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    /* 百分比圓形圖 */
+    .circle{
+        width: 50px;
+        height: 50px;
+        background-color: rgba(255, 113, 104, 0.4);
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+    }
+    .p90,
+    .p180,
+    .p270,
+    .p360{
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        background-color: #FF7168;
+    }
+    .p180{
+        top: 50%;
+    }
+    .p270{
+        top: 50%;
+        left: 0;
+    }
+    .p360{
+        top: 0;
+        left: 0;
+    }
+
+    .circle::after{
+        content: "";
+        display: block;
+        background-color: #02005B;
+        /* 用calc 加減號中間一定要空白 */
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        border-radius: 50%;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    /*  長條圖做法 */
+    .listProgram .bar{
+        width: 150px;
+        height: 8px;
+        border: 2px solid #FF7168;
+        border-radius: 100px;
+    }
+    .listProgram li{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 10px;
+    }
+    .value{
+        height: 100%;
+        width: 60%;
+        background-color: #FF7168;
+    }
+    /* 設定不同百分比的class name 會跟上面圓餅重複，改用v開頭*/
+    .v90{
+        width: 90%;
+    }
+    .v80{
+        width: 80%;
+    }
+    .v70{
+        width: 70%;
+    }
+    
+</style>
+<body>
+    <div class="resume">
+        <div class="left">
+            <h1>Doris Liu</h1>
+            <h4>前端網頁工程師 | 詮睿科技</h4>
+            <hr>
+            <p>前端網頁設計</p>
+            <div class="buttons">
+                <a class="btn fill" href="https://github.com/chiayuuliu" target="_blank">作品集</a>
+                <a class="btn" href="https://github.com/chiayuuliu" target="_blank">Github</a>
+            </div>
+            <!-- 技能區 -->
+            <div class="block">
+                <h4>Skills</h4>
+                <h2>專業技能</h2>
+                <ul class="listSkill">
+                    <li>
+                        <div class="circle">
+                            <div class="p90"></div>
+                            <div class="p180"></div>
+                            <div class="p270"></div>
+                        </div>
+                        前端網頁開發
+                    </li>
+                    <li>
+                        <div class="circle">
+                            <div class="p90"></div>
+                            <div class="p180"></div>
+                        </div>
+                        後端網頁開發
+                    </li>
+                    <li>
+                        <div class="circle">
+                            <div class="p90"></div>
+                            <div class="p180"></div>
+                        </div>
+                        平面設計
+                    </li>
+                    <li>
+                        <div class="circle">
+                            <div class="p90"></div>
+                            <div class="p180"></div>
+                            <div class="p270"></div>
+                        </div>
+                        專案管理
+                    </li>
+                    <li>
+                        <div class="circle">
+                            <div class="p90"></div>
+                            <div class="p180"></div>
+                            <div class="p270"></div>
+                        </div>
+                        產品管理
+                    </li>
+                    <li>
+                        <div class="circle">
+                            <div class="p90"></div>
+                            <div class="p180"></div>
+                            <div class="p270"></div>
+                            <div class="p360"></div>
+                        </div>
+                        前端網頁開發
+                    </li>
+                    <li>
+                        <div class="circle">
+                            <div class="p90"></div>
+                            <div class="p180"></div>
+                            <div class="p270"></div>
+                        </div>
+                        商用英文
+                    </li>
+                    <li>
+                        <div class="circle">
+                            <div class="p90"></div>
+                            <div class="p180"></div>
+                            <div class="p270"></div>
+                        </div>
+                        API串接
+                    </li>
+                </ul>
+            </div>
+            <!-- 程式技能 -->
+            <div class="block">
+                <h4>Programming Skill</h4>
+                <h2>程式技能</h2>
+                <ul class="listProgram">
+                    <li>HTML5
+                        <div class="bar">
+                            <div class="value v90"></div>
+                        </div>
+                    </li>
+                    <li>CSS3
+                        <div class="bar">
+                            <div class="value v80"></div>
+                        </div>
+                    </li>
+                    <li>JavaScript
+                        <div class="bar">
+                            <div class="value v70"></div>
+                        </div>
+                    </li>
+                    <li>Bootstrape
+                        <div class="bar">
+                            <div class="value v80"></div>
+                        </div>
+                    </li>
+                    <li>React
+                        <div class="bar">
+                            <div class="value"></div>
+                        </div>
+                    </li>
+                    <li>Figma
+                        <div class="bar">
+                            <div class="value v70"></div>
+                        </div>
+                    </li>
+                    <li>NodeJS
+                        <div class="bar">
+                            <div class="value"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 經歷與作品 -->
+        <div class="right">
+            <div class="decoration"></div>
+            <div class="block">
+                <h4>Experience / Works</h4>
+                <h2>經歷與作品</h2>
+                <ul class="listExperience" >
+                    <li class="year">2015
+                        <ul>
+                            <li>聚陽實業</li>
+                        </ul>
+                    </li>
+                    <li class="year">2018
+                        <ul>
+                            <li>聯瞻資訊</li>
+                        </ul>
+                    </li>
+                    <li class="year">2019
+                        <ul>
+                            <li>台南企業</li>
+                        </ul>
+                    </li>
+                    <li class="year">2022
+                        <ul>
+                            <li>詮睿資訊</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <h4>Contests</h4>
+                <h2>比賽經歷</h2>
+            </div>
+            <ul>
+                <li>比賽名稱跟得獎名次</li>
+                <li>比賽名稱跟得獎名次</li>
+                <li>比賽名稱跟得獎名次</li>
+                <li>比賽名稱跟得獎名次</li>
+                <li>比賽名稱跟得獎名次</li>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>

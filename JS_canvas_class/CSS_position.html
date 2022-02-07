@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 定位與練習</title>
+</head>
+<style>
+    *{
+        border: 1px solid black;
+    }
+    h3{
+        background-color: wheat;
+    }
+    .ib{
+        display: inline-block;
+    }
+    .left, .right{
+        background-color: lightskyblue;
+        padding: 5px 10px;
+    }
+    .left{
+        float: left;
+    }
+    .right{
+        float: right;
+    }
+    /* 下這個語法的時候，可以讓整個高度依照裡面有float 特性的高去撐開 */
+    .floattext{
+        overflow: hidden;
+    }
+    .card{
+        width: 500px;
+        height: 200px;
+        display: inline-block;
+        position: relative;
+    }
+    /* 位置不會變動，static 預設的屬性 */
+    .cardStatic .rect2{
+        left: 50px;
+        top: 50px;
+    }
+    /* 相對定位，可偏移，也會預留空白位置 */
+    .cardRelative .rect2{
+        position: relative;
+        left: 50px;
+        top: 50px;
+    }
+    /* 絕對定位 */
+    .cardAbsolute .rect2{
+        position: absolute;
+        left: 150px;
+        top: 50px;
+    }
+    /* fixed 適用於蓋板廣告 */
+    .cardFixed .rect2{
+        position: fixed;
+        right: 350px;
+        bottom: 50px;
+    }
+    
+    .rects .rect{
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+    }
+    .rects .rect1{
+        background-color: blue;
+    }
+    .rects .rect2{
+        background-color: red;
+    }
+    .rects .rect3{
+        background-color: green;
+    }
+</style>
+<body>
+<h1>CSS 定位與排列練習</h1>
+<hr>
+<!-- display -->
+<h2>Display</h2>
+<h3>預設會是display:block , 會左右撐滿</h3>
+<h3 class="ib">inline-block 自動縮放123</h3>
+<h3 class="ib">inline-block 自動縮放asd</h3>
+<h3 class="ib">inline-block 自動縮放fe</h3>
+<h3 class="ib">inline-block 自動縮放erw</h3>
+
+<!-- float -->
+<h2>Float(容器+ overflow:hidden)，可以讓外部的高度依照內部float 的特性元素去撐高度</h2>
+
+<h3 class="floattext">
+    <div class="left">左側1</div>
+    <div class="left">左側2</div>
+    <div class="left">左側3</div>
+    <div class="left">左側4</div>
+
+    <div class="right">更多1</div>
+    <div class="right">更多2</div>
+    <div class="right">更多3</div>
+    <div class="right">更多4</div>
+    預設會是display:block , 會左右撐滿
+</h3>
+
+<!-- position -->
+<h2>Position</h2>
+<div class="card cardStatic">
+    <h4>static 只能動內外距離(用margin padding)</h4>
+    <div class="rects">
+        <div class="rect rect1"></div>
+        <div class="rect rect2"></div>
+        <div class="rect rect3"></div>
+    </div>
+</div>
+<div class="card cardRelative">
+    <h4>relative 可簡單偏移，在排版系統內</h4>
+    <div class="rects">
+        <div class="rect rect1"></div>
+        <div class="rect rect2"></div>
+        <div class="rect rect3"></div>
+    </div>
+</div>
+<div class="card cardAbsolute">
+    <h4>absolute 絕對定位，在排版系統外</h4>
+    <div class="rects">
+        <div class="rect rect1"></div>
+        <div class="rect rect2"></div>
+        <div class="rect rect3"></div>
+    </div>
+</div>
+<div class="card cardFixed">
+    <h4>fixed 視窗絕對定位 在排版系統外</h4>
+    <div class="rects">
+        <div class="rect rect1"></div>
+        <div class="rect rect2"></div>
+        <div class="rect rect3"></div>
+    </div>
+</div>
+
+    
+</body>
+</html>
