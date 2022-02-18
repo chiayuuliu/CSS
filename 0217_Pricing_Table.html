@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<style>
+    *{
+        /* border: 1px solid rgba(0, 0, 0, 0.404); */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #647df9;
+        padding: 20px;
+    }
+    .wrapper{
+        max-width: 1090px;  
+        width: 100%;
+        display: flex;
+        margin: auto;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .wrapper .table{
+        /* width: 33%; */
+        background-color: #fff;
+        width: calc(33% - 20px);
+        padding: 30px;
+        position: relative;
+    }
+    /* 小於1020寬 */
+    @media (max-width:1020px){
+        .wrapper .table{
+            width: calc(50% - 20px);
+            margin-bottom: 40px;
+            min-width: 300px;
+        }
+    }
+
+    @media (max-width:698px){
+        .wrapper .table{
+            width: 100%;
+            min-width: 300px;
+            
+        }
+    }
+    /* 價格區 */
+    .table .price-section{
+        display: flex;
+        justify-content: center;
+    }
+    .price-section .price-area{
+        /* background-color: #ffd861; */
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        padding: 2px;
+    }
+    /* 父層是上面的價格大區 */
+    .price-area .inner-area{
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        /* background-color: #ffd861; */
+        border: 3px solid #fff;
+        color: rgb(255, 255, 255);
+        line-height: 110px;
+        text-align: center;
+        position: relative;
+    }
+
+    .price-area .inner-area .text{
+        font-size: 25px;
+        font-weight: 400;
+        position: absolute;
+        top: -10px;
+        left: 17px;
+    }
+    .price-area .inner-area .price{
+        font-size: 45px;
+        font-weight: 500;
+        margin-left: 16px;
+        /* padding-left: 16px; */
+    }
+    .table .package-name{
+        width: 100%;
+        height: 2px;
+        /* background: #ffd861; */
+        margin: 35px 0px;
+        position: relative;
+    }
+    /* 先統一在大範圍區域設定偽元素，在最後面個別設定 */
+    .table .package-name::before{
+        position: absolute;
+        content: "Basic";
+        left: 50%;
+        top: 50%;
+        background: #fff;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 0 15px;
+        transform: translate(-50%, -50%);
+    }
+
+    .table .features li{
+        margin-bottom: 15px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
+    .features li .list-name{
+        font-size: 17px;
+        font-weight: 400;
+    }
+    .features li .icon{
+        font-size: 15px;
+    }
+    .features li .icon.check{
+        color: #2db94d;
+    }
+
+    .features li .icon.cross{
+        color: #cd3241;
+    }
+    .table .btn{
+        display: flex;
+        justify-content: center;
+    }
+    .table .btn button{
+        width: 80%;
+        height: 50px;
+        border: none;
+        color: #fff;
+        font-weight: 700;
+        border-radius: 100px;
+        font-size: 20px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .table .btn button:hover{
+        border-radius: 5px;
+    }
+    /* 設定反白的字顏色 */
+    .table ::selection{
+        color: #fff;
+    }
+    /* 個別設定樣式 */
+    .basic ::selection,
+    .basic .price-area,
+    .basic .inner-area{
+        background: #ffd861;
+    }
+    .basic .btn button{
+        background-color: #fff;
+        border: 2px solid #ffd861;
+        color: #ffd861;
+    }
+    .basic .btn button:hover{
+        background-color: #ffd861;
+        color: #fff;
+    }
+    .premium ::selection,
+    .premium .price-area,
+    .premium .inner-area,
+    .premium .btn button{
+        background: #a26bfa;
+    }
+
+    .ultimate ::selection,
+    .ultimate .price-area,
+    .ultimate .inner-area{
+        background: #43ef8b;
+    }
+    .ultimate .btn button{
+        background-color: #fff;
+        border: 2px solid #43ef8b;
+        color: #43ef8b;
+    }
+    .ultimate .btn button:hover{
+        background-color: #43ef8b;
+        color: #fff;
+    }
+    .basic .package-name{
+        background-color: #ffecb3;
+    }
+    .premium .package-name{
+        background-color: #d0b3ff;
+    }
+    .ultimate .package-name{
+        background-color: #baf8d4;
+    }
+    /* 個別改偽元素內容 */
+    .basic .package-name::before{
+        content: "Basic";
+    }
+    .premium .package-name::before{
+        content: "Premium";
+    }
+    .ultimate .package-name::before{
+        content: "Ultimate";
+    }
+    .premium{
+        position: relative;
+    }
+    /* 緞帶樣式 */
+    .table .ribbon{
+        height:150px;
+        width:150px;
+        /* background-color: red; */
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        overflow: hidden;
+    }
+    /* 緞帶後面裝飾帶 */
+    .table .ribbon::before,
+    .table .ribbon::after{
+        position: absolute;
+        content: "";
+        display: block;
+        border: 7px solid #4606ac;
+        /* 只留右跟下的線，形成三角形 */
+        border-left-color: transparent;
+        border-top-color: transparent;
+        z-index: -1;
+    }
+    .table .ribbon::before{
+        top: 0;
+        right: 19px;
+    }
+    .table .ribbon::after{
+        left: 0;
+        bottom: 19px;
+    }
+
+
+    .table .ribbon span{
+        position: absolute;
+        background-color: #a26bfa;
+        width: 200px; 
+        padding: 10px 0;
+        color: #fff;
+        text-align: center;
+        top: 30px;
+        right: 0px;
+        /* 都大寫設定 */
+        text-transform: uppercase;
+        transform: rotate(-45deg);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.13);
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <div class="table basic">
+            <div class="price-section">
+                <div class="price-area">
+                    <div class="inner-area">
+                        <span class="text">$</span>
+                        <span class="price">29</span>
+                    </div>
+                </div>
+            </div>
+            <div class="package-name"></div>
+            <ul class="features">
+                <li>
+                    <span class="list-name">One Selected Template</span>
+                    <span class="icon check">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </li>
+                <li>
+                    <span class="list-name">100% Responsive Design</span>
+                    <span class="icon check">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </li>
+                <li>
+                    <span class="list-name">Credit Remove Permission</span>
+                    <span class="icon cross">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </li>
+                <li>
+                    <span class="list-name">Lifetime Template Updates</span>
+                    <span class="icon cross">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </li>
+            </ul>
+            <div class="btn"><button>Purchase</button></div>
+        </div>
+        <div class="table premium">
+            <!-- 緞帶樣式 -->
+            <div class="ribbon"><span>Recommend</span></div>
+            <div class="price-section">
+                <div class="price-area">
+                    <div class="inner-area">
+                        <span class="text">$</span>
+                        <span class="price">59</span>
+                    </div>
+                </div>
+            </div>
+            <div class="package-name"></div>
+            <ul class="features"> 
+                <li>
+                    <span class="list-name">Five Existing Templates</span>
+                    <span class="icon check">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </li>
+                <li>
+                    <span class="list-name">100% Responsive Design</span>
+                    <span class="icon check">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </li>
+                <li>
+                    <span class="list-name">Credit Remove Permission</span>
+                    <span class="icon check">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </li>
+                <li>
+                    <span class="list-name">Lifetime Template Updates</span>
+                    <span class="icon cross">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </li>
+            </ul>
+            <div class="btn"><button>Purchase</button></div>
+        </div>
+        <div class="table ultimate">
+            <div class="price-section">
+                <div class="price-area">
+                    <div class="inner-area">
+                        <span class="text">$</span>
+                        <span class="price">99</span>
+                    </div>
+                </div>
+            </div>
+            <div class="package-name"></div>
+            <ul class="features">
+                <li>
+                    <span class="list-name">All Existing Template</span>
+                    <span class="icon check">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </li>
+                <li>
+                    <span class="list-name">100% Responsive Design</span>
+                    <span class="icon check">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </li>
+                <li>
+                    <span class="list-name">Credit Remove Permission</span>
+                    <span class="icon check">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </li>
+                <li>
+                    <span class="list-name">Lifetime Template Updates</span>
+                    <span class="icon check">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </li>
+            </ul>
+            <div class="btn"><button>Purchase</button></div>
+        </div>
+    </div>
+    
+</body>
+</html> 
