@@ -48,6 +48,7 @@
     a{
         color: white;
         margin-top: none;
+        text-decoration: none;
     }
     hr{
         border: none;
@@ -98,6 +99,24 @@
     .listExperience>li{
         display: flex;
         margin-bottom: 10px;
+        /* align-items: center; */
+    }
+    /* .listExperience p{
+        width: 30px;
+    } */
+
+    /* 第一個li 裡面的ul ，為每個經歷設定不同顏色*/
+    .listExperience > li:nth-child(1) ul{
+        border-color: #FF7168;
+    }
+    .listExperience > li:nth-child(2) ul{
+        border-color: #FFA582;
+    }
+    .listExperience > li:nth-child(3) ul{
+        border-color: #FFB087;
+    }
+    .listExperience > li:nth-child(4) ul{
+        border-color: #FFDE9E;
     }
     .listExperience li ul{
         padding-left: 10px;
@@ -190,7 +209,13 @@
     .v70{
         width: 70%;
     }
-    
+    .btn{
+        border: 3px solid #FF7168;
+        padding: 5px 20px;
+    }
+    .fill{
+        background-color: #FF7168;
+    }
 </style>
 <body>
     <div class="resume">
@@ -323,7 +348,10 @@
                 <h4>Experience / Works</h4>
                 <h2>經歷與作品</h2>
                 <ul class="listExperience" >
-                    <li class="year">2015
+                    <li class="year">
+                        <!-- <p> -->
+                            2015
+                        <!-- </p> -->
                         <ul>
                             <li>聚陽實業</li>
                         </ul>
@@ -338,7 +366,7 @@
                             <li>台南企業</li>
                         </ul>
                     </li>
-                    <li class="year">2022
+                    <li class="year">2020
                         <ul>
                             <li>詮睿資訊</li>
                         </ul>

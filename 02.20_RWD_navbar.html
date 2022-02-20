@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<style>
+    *{
+        /* border: 1px solid rgb(52, 73, 81); */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: #f2f2f2;
+    }
+
+    nav{
+        background-color: #1b1b1b;
+    }
+    nav:after{
+        content: "";
+        clear: both;
+        /* 研究 */
+        display: table;
+    }
+    nav .logo{
+        color: white;
+        /* display: flex; */
+        font-size: 27px;
+        font-weight: 600;
+        line-height: 70px;
+        padding-left: 60px;  
+    }
+    nav ul{
+        float: right;
+        list-style: none;
+        margin-right: 40px;
+        position: relative;
+    }
+    nav ul li{
+        /* 試著用flex 改寫 */
+        float: left;
+        display: inline-block;
+        background: #1b1b1b;
+        margin: 0 5px;
+
+    }
+    nav ul li a{
+        color: white;
+        text-decoration: none;
+        line-height: 70px;
+        font-size: 18px;
+        padding: 9px 15px;
+        border-radius: 5px;
+    }
+    nav ul li a:hover{
+        color: cyan;
+        box-shadow: 0 0 5px #33ffff, 0 0 5px #66ffff;
+    }
+
+    nav ul ul li a:hover{
+        /* 子層的陰影拿掉，只改變字顏色 */
+        color: cyan;
+        box-shadow: none;
+    }
+
+    nav ul ul{
+        position: absolute;
+        top: 90px;
+        border-top: 3px solid cyan;
+        /* 將第二層隱藏 */
+        opacity: 0;
+        visibility: hidden;
+        /* 只針對top 做transition */
+        transition: top .3s;
+    }
+    nav ul ul ul{
+        /* 拿掉第二層的border top  */
+        border-top: none;
+    }
+    /* 設定li hover 後面的ul出現 */
+    nav ul li:hover > ul{
+        /* hover 的時候 距離上面變短，有位移效果 */
+        top: 70px;
+        opacity: 1;
+        visibility: visible;
+    }
+    /* 第二層下拉選單 */
+    nav ul ul li{
+        position: relative;
+        margin: 0;
+        width: 150px;
+        float: none;
+        /* **研究** */
+        display: list-item;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3)
+    }
+    nav ul ul li a{
+        line-height: 50px;
+    }
+
+    /* 第三層 */
+    nav ul ul ul li{
+        /* 為何不能用絕對定位 **研究差異 */
+        position: relative;
+        top: -70px;
+        left: 150px;
+
+    }
+
+    /* input label */
+    .show, .icon, input{
+        display: none;
+    }
+    @media all and (max-width:968px){
+        nav ul{
+            margin-right: 0px;
+            float: left;
+        }
+        nav .logo{
+            padding-left: 30px;
+            width: 100%;
+        }
+        /* 第二層 */
+        nav ul li, nav ul ul li{
+            display: block;
+            width: 100%;
+        }
+        nav ul ul{
+            top: 70px;
+            position: static;
+            border-top: none;
+            float: none;
+            display: none;
+            opacity: 1;
+            visibility: visible;
+        }
+        /* 第三層手機版 */
+        nav ul ul ul li{
+            position: static;
+        }
+        nav ul ul li{
+            border-bottom: 0px;
+        }
+        /* 子層設定padding */
+        nav ul ul a{
+            padding-left: 40px;
+        }
+        nav ul ul ul a{
+            padding-left: 80px;
+        }
+        .show{
+            display: block;
+            color: white;
+            font-size: 18px;
+            padding: 0 20px;
+            line-height: 70px;
+            cursor: pointer;
+        }
+        .show:hover{
+            color: cyan;
+        }
+        .icon{
+            display: block;
+            color: white;
+            position: absolute;
+            right: 40px;
+            top: 0;
+            line-height: 70px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+        nav ul li a:hover{
+            box-shadow: none;
+        }
+        .show + a, ul{
+            display: none;
+        }
+        /* **研究 */
+        [id^=btn]:checked + ul{
+            display: block;
+        }
+
+    }
+     
+</style>
+<body>
+    <nav>
+        <div class="logo">CodingNepal</div>
+        <!-- 漢堡選單 -->
+        <label for="btn" class="icon" >
+            <span class="fa fa-bars"></span>
+        </label>
+        <!-- 設定是checkbox, 隱藏input -->
+        <input type="checkbox" id="btn">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <label for="btn-1" class="show" >Features +</label>
+                <a href="">Features(有下拉式選項)</a>
+                <input type="checkbox" id="btn-1">
+                <ul>
+                    <li><a href="">Pages</a></li>
+                    <li><a href="">Elements</a></li>
+                    <li><a href="">Icons</a></li>
+                </ul>
+            </li>
+            <li>
+                <label for="btn-2" class="show" >Services +</label>
+                <a href="">Services(兩層下拉式選項)</a>
+                <input type="checkbox" id="btn-2" >
+                <ul>
+                    <li><a href="">Web Design</a></li>
+                    <li><a href="">App Design</a></li>
+                    <li>
+                        <label for="btn-3" class="show" >More</label>
+                        <a href="">More</a>
+                        <input type="checkbox" id="btn-3" >
+                        <ul>
+                            <li><a href="#">Submenu-1</a></li>
+                            <li><a href="#">Submenu-2</a></li>
+                            <li><a href="#">Submenu-3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">Portfolio</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </nav>
+
+    
+</body>
+</html>
