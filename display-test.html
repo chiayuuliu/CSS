@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .inline{
+        /* 元素可在同一行內呈現，圖片或文字均不換行，也不會影響其版面配置，不能設定寬高，寬高由內容物撐開*/
+        /* 字仍在行內，其他行並不會被推開 */
+        display: inline;
+        background-color: lightpink;
+        border: 3px solid blue;
+        margin: 10px;
+        padding: 10px;
+    }
+    /* display:block 可以設定寬高，寬度預設會撐到最大，使其占滿整個容器，即便設定寬度，但還是會佔滿一整行*/
+    /* 即便是行內元素也會被轉換成區塊元素 */
+    .block{
+        background-color: cornflowerblue;
+        border: 3px solid lightpink;
+        margin: 10px;
+        padding: 10px;
+        color: white;
+        width: 100px;
+        height: 50px;
+    }
+    /* 以inline的方式呈現，但同時擁有block的屬性．可設定元素的寬高/margin/padding．可水平排列 */
+    .inlineblock{
+        display: inline-block;
+        background-color: wheat;
+        border: 3px solid rebeccapurple;
+        margin: 10px;
+        padding: 10px;
+    }
+</style>
+<body>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur perferendis atque et incidunt esse fuga blanditiis cupiditate ex consequuntur voluptas! Tempora eligendi officia earum architecto. Aut illum ad consectetur at!
+        <div class="inline">
+            display:inline
+        </div>
+        <div class="inline">
+            display:inline
+        </div>
+        <div class="inline">
+            display:inline
+        </div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur exercitationem, consequatur numquam, atque aut maxime hic repudiandae, vitae earum nesciunt laboriosam suscipit itaque alias esse sed voluptatum labore accusamus? Ratione?
+        <p class="block">display:block</p>
+        <p class="block">display:block</p>
+        <div class="block">display:block</div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit voluptas accusantium a sed assumenda doloribus rem id cum, dignissimos necessitatibus? Commodi doloribus vero explicabo delectus illum dignissimos quod incidunt ducimus?
+        <div class="inlineblock">display:inline block</div>
+        <div class="inlineblock">可以跟行內一樣並排</div>
+        <div class="inlineblock">又可以設定margin padding 左右都可以被推開</div>
+
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, expedita esse veritatis recusandae ratione inventore nemo numquam enim sed, facilis placeat ullam labore laboriosam quod voluptate laudantium error? Aliquid, cupiditate?
+    </div>
+    
+</body>
+</html>

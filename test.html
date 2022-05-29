@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .title h2:after{
+        content: '123';
+        /* 每條線相連接都是斜角 */
+        border-bottom: 50px solid pink;
+        border-top: 50px solid blue;
+        border-left: 30px solid red;
+        border-right: 30px solid rgb(39, 169, 85);
+
+    }
+</style>
+
+
+<body>
+    <form>
+        <div className="inputwrap">
+            <input 
+            type="email" 
+            placeholder="電子郵件"
+            required
+            />
+            <input 
+            type="password" 
+            placeholder="密碼"
+
+            required
+            />
+        </div>
+        <div className="btn-wrap">
+            <button 
+            type="submit">送出</button>
+            <button 
+            type="submit">清除</button>
+        </div>
+    </form>
+
+<script>
+    const test = document.querySelector('button')
+
+    let str=' abby '
+    console.log(str.trim())
+
+    test.onclick=function(){
+        let val = document.querySelector('input').value
+        if(val.trim()=='qwe'){
+            console.log('ok')
+        }
+        console.log(val.trim())
+        }
+    
+</script>
+</body>
+</html>

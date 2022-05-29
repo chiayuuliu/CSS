@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body 
+    //- <h2>Pug前處理語言</h2>
+    h2 pug前處理語言
+
+    //- <h2 class="title red" >Pug前處理語言</h2>
+    h2.title.red pug 前處理語言
+
+    //- <h2 class="title red" >Pug前處理語言<span class="smallText" >小文字</span></h2>
+    //- 利用縮排讓元素放在裡面
+    h2.title.red pug 前處理語言
+    span.smallText 小文字
+    
+    //- list pug 寫法練習
+    ul.personlist 
+    .person
+        h3 名子1
+        p 內文介紹
+    .person
+        h3 名子2
+        p 內文介紹
+    .person
+        h3 名子3
+        p 內文介紹
+    
+    //- <a href="網址"></a> pug 寫法 a 跟後面的()不能有空格
+
+    a(href="網址") a連結
+    img(src="圖片網址", width="100px")
+    

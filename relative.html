@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相對定位練習</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    /* 相對定位就是偏移顯示 */
+    ul{
+        font-size: 0;
+    }
+    li{
+        display: inline-block;
+        font-style: 16px;
+        width: 100px;
+        height: 100px;background-color: wheat;
+        margin: 10px;
+        font-size: 50px;
+        text-align: center;
+        line-height: 100px;
+    }
+    /* 偏移顯示，其他元素不會被推擠到 */
+    /* 有設定定位，才有先後順序，z-index 才有用處 */
+    .item10{
+        position: relative;
+        margin-left: 30px;
+    }
+</style>
+<body>
+    <!-- ul>li.item${$}*20 -->
+    <ul>
+        <li class="item1">1</li>
+        <li class="item2">2</li>
+        <li class="item3">3</li>
+        <li class="item4">4</li>
+        <li class="item5">5</li>
+        <li class="item6">6</li>
+        <li class="item7">7</li>
+        <li class="item8">8</li>
+        <li class="item9">9</li>
+        <li class="item10">10</li>
+        <li class="item11">11</li>
+        <li class="item12">12</li>
+        <li class="item13">13</li>
+        <li class="item14">14</li>
+        <li class="item15">15</li>
+        <li class="item16">16</li>
+        <li class="item17">17</li>
+        <li class="item18">18</li>
+        <li class="item19">19</li>
+        <li class="item20">20</li>
+    </ul>
+</body>
+</html>

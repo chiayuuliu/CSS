@@ -46,6 +46,7 @@
                     <h2 class="name">Doris Liu</h2>
                     <p>Web Front Engineer</p>
                     <div><span>Email : </span>chiayuu.liu@gmail.com</div>
+                    <a href="mailto:chiayuu.liu@gmail.com">chiayuu.liu@gmail.com</a>
                     <div><span>Phone : </span>0953-680-007</div>
                     <div><span>City : </span>NewTaipei City</div>
                 </div>
@@ -201,7 +202,9 @@
     const email = document.querySelector('.contactemail')
     const msg = document.querySelector('.contactmessage')
 
-
+    window.addEventListener('scroll',function (event) {
+            event.stopPropagation()
+        })
     // 網頁呈現的時候把表單資訊清空
     window.onpageshow = function() {
         name.value=''

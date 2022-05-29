@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        width: 300px;
+        height: 400px;
+        /* background-color: wheat; */
+        margin: 10px;
+        border: 1px solid darkgoldenrod;
+    }
+    .box1{
+        backdrop-filter: brightness(60%);
+    }
+    .box2{
+        backdrop-filter: sepia(50%);
+    }
+    img{
+        width: 50%;
+        height: 50%;
+        object-fit: contain;
+    }
+    .box3{
+        background-image: url(/img/avatar.png) ;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        backdrop-filter: blur(2px);
+        backdrop-filter: drop-shadow(4px 4px 10px blue);
+        width: 300px;
+        height: 400px;
+    }
+    .box4{
+        backdrop-filter: saturate(10%);
+    }
+
+    html, body{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    body{
+        /* background-image: url(/img/專題/All-pd-banner.png) ; */
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .avatar{
+        /* 這個語法可以只讓png邊緣有陰影，不會影響到整個 */
+        filter: drop-shadow(0px 15px 25px rgb(113, 113, 113));
+    }
+
+
+</style>
+<body>
+    <div class="box1">brightness(60%)</div>
+    <div class="box2"></div>
+    <div class="box3">
+        <!-- <img src="./img/avatar.png" alt=""> -->
+    </div>
+    <div class="box4"></div>
+    <img class="avatar" src="/img/avatar.png" alt="">
+    
+</body>
+</html>

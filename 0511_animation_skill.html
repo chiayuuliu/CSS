@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* border: 1px solid lightgray; */
+    }
+    body {
+      height: 100vh;
+      display: flex;
+      background: #4070f4;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      position: relative;
+      max-width: 500px;
+      width: 100%;
+      background-color: white;
+      margin: 0 15px;
+      padding: 10px 20px;
+      border-radius: 7px;
+    }
+    .container .skill-box {
+      width: 100%;
+      margin: 25px 0;
+    }
+    .skill-box .title {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .skill-box .skill-bar {
+      height: 8px;
+      width: 100%;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    .skill-bar .skill-per {
+      position: relative;
+      display: block;
+      height: 100%;
+      width: 90%;
+      background-color: #4070f4;
+      animation: progress 0.4s ease-in-out forwards;
+      opacity: 0;
+      border-radius: 6px;
+    }
+
+    @keyframes progress {
+      0% {
+        width: 0;
+        opacity: 0;
+      }
+      100% {
+        /* 不用設定寬度就會預設原本的設定 */
+        /* width: 100%; */
+        opacity: 1;
+      }
+    }
+    .skill-per .tooltip {
+      position: absolute;
+      right: -14px;
+      top: -28px;
+      font-size: 9px;
+      font-weight: 500;
+      color: #fff;
+      padding: 2px 6px;
+      border-radius: 3px;
+      background: #4070f4;
+      z-index: 1;
+    }
+    .tooltip::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #4070f4;
+      bottom: -3px;
+      left: 50%;
+      z-index: -1;
+      transform: translateX(-50%) rotate(45deg);
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="skill-box">
+        <span class="title">HTML</span>
+        <div class="skill-bar">
+          <span class="skill-per">
+            <span class="tooltip">90%</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

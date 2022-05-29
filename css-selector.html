@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>選取器練習</title>
+</head>
+<style>
+
+    /* 選到 h1 後面的那一個 p，只有第一個p有效果 */
+    /* 有跟在h1後面的p 才有用，所以只有第一個p有效 */
+    h1+p{
+        color: blue;
+    }
+    /* h1 後面的所有p 都有效果 (h1 p 要在同一層)*/
+    h1~p{
+        color: brown;
+    }
+
+    /* 除了第一個li，其他所有li 都有border top 的紅線 */
+    /* 有跟在li後面的li才有效，第一個li前面沒有li所以沒效果 */
+    /* li + li { border-top: 1px solid red; } */
+
+    /* 變成橫排 */
+    li { 
+        display: inline-block; 
+    }
+
+    li + li { 
+        border-left: 2px solid rgb(75, 53, 53); 
+        padding-left: 5px;
+    }
+
+    /* 綜合運用的範例 */
+    .color{
+        /* 把<a> 變成行內區塊元素 */
+        display: inline-block;  
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        color: white;
+        text-decoration: none;
+    }
+    .color-box{
+        width: 100px;
+        height: 100px;
+        margin-top: 20px;
+        background: #ccc;
+    }
+    .R { background-color: red; }
+    .G { background-color: green; }
+    .B { background-color: blue; }
+    /* 不管哪個被hover 到 後面的color-box 都會作用 */
+    .R:hover ~ .color-box{ background-color: red; }
+    .G:hover ~ .color-box{ background-color: green; }
+    .B:hover ~ .color-box{ background-color: blue; }
+</style>
+<body>
+    <!-- ------- -->
+    <h1>金魚系列好棒棒</h1>
+        <p>段落一的內容...</p>
+        <p>段落二的內容...</p>
+        <p>段落三的內容...</p>
+    <h1>只要在H1 後面的P</h1>
+        <p>都會有作用</p>
+        <p>但前提是H1 跟 P要在同一層</p>
+        <h4>就算中間有h4</h4>
+        <p>後面的p還是有作用</p>
+    <!-- 二 -->
+
+    <ul>
+        <li>暴力網頁入門班</li>
+        <li>RWD原來醬子班</li>
+        <li>金魚都懂的網頁入門</li>
+        <li>金魚都懂的這個網頁怎麼切</li>	
+    </ul>
+
+    <!-- 相關應用的範例 -->
+    <a href="#" class="color R">R</a>
+    <a href="#" class="color G">G</a>
+    <a href="#" class="color B">B</a>
+    <div class="color-box"></div>    
+</body>
+</html>
