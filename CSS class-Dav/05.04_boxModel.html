@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      /* 寬度只包含文字內容 */
+      /* box-sizing: content-box; */
+      box-sizing: border-box;
+    }
+    .container {
+      border: 15px groove rgb(211, 211, 255);
+      width: 400px;
+      margin: 1.5rem;
+      padding: 1.5em;
+      /* outline 跟border 區別是 outline 不佔空間 */
+      outline: 5px solid red;
+    }
+    .circle {
+      background-color: lightblue;
+      width: 100px;
+      height: 100px;
+      border: 2px solid #000;
+      outline: 2px solid red;
+      /* outline 跟元素之間的間距 */
+      outline-offset: 0.5rem;
+      margin: 3rem auto;
+      border-radius: 50px;
+    }
+  </style>
+  <body>
+    <header class="container">
+      <h1>CSS Box Model</h1>
+    </header>
+    <main class="container">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sed
+        quia explicabo at libero in necessitatibus voluptatum aperiam optio
+        odit, numquam ad ducimus? Rem commodi ducimus saepe autem aperiam cum!
+      </p>
+      <div class="circle"></div>
+    </main>
+  </body>
+</html>

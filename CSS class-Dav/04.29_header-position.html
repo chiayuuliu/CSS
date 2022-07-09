@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      box-sizing: border-box;
+      border: 1px solid lightgray;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    section {
+      height: 100vh;
+      font-size: 20px;
+    }
+    header,
+    footer {
+      height: 60px;
+      text-align: center;
+      color: white;
+      font-size: 2rem;
+      line-height: 60px;
+    }
+    header {
+      position: sticky;
+      top: 0px;
+    }
+    /* position 研究 */
+    footer {
+      background-color: #000;
+      /* 為何sticky 會讓寬100% */
+      position: sticky;
+      bottom: 0;
+    }
+    footer a {
+      color: white;
+      border: none;
+      text-decoration: none;
+    }
+    .blue {
+      background-color: blue;
+    }
+    .red {
+      background-color: red;
+    }
+    .green {
+      background-color: green;
+    }
+    a:visited {
+      color: rgb(203, 255, 150);
+    }
+    .social {
+      background-color: lightblue;
+      color: white;
+      font-size: inherit;
+      padding: 20px;
+      border: none;
+      border-radius: 50%;
+      position: fixed;
+      top: 40%;
+      left: 0;
+      z-index: 1;
+    }
+    /* 單位研究 */
+    /* **如果寫死16px 單位，如果瀏覽器設定要放大，字體就不會跟著變動 */
+    /* p的父層section有設定字大小20px，如果子層下2rem 就會根據20px 去放大兩倍 rem的r=root ， 如果只下em 表示就是根據16px 去放大*/
+    p {
+      font-size: 1em;
+      /* 依照字的寬度，45個字寬度 */
+      width: 45ch;
+    }
+    h2 {
+      /* 如果對標題標籤設定字大小，瀏覽器會取消預設大小(會顯示在f12裡) */
+      font-size: 1.2em;
+    }
+  </style>
+  <body>
+    <button class="social">🚀</button>
+    <section id="one">
+      <header class="blue">Header One</header>
+      <h2>One</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
+        est dicta voluptatum minus dolorum ab eveniet architecto rerum eaque
+        quasi pariatur explicabo et molestias qui repellendus dolores, nemo
+        voluptate adipisci?
+      </p> 
+    </section>
+    <section id="two">
+      <header class="red">Header Two</header>
+      <h2>Two</h2>
+    </section>
+    <section id="three">
+      <header class="green">Header Three</header>
+      <h2>Three</h2>
+    </section>
+    <footer>
+      <a href="#one">One</a> | <a href="#two">Two</a> |
+      <a href="#three">Three</a>
+    </footer>
+  </body>
+</html>
